@@ -1,16 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import {Column} from '../grid/Column';
 
-
-
 @Component({
     moduleId: module.id.toString(),
     selector: 'customer-view',
-    templateUrl: 'customer-view.component.html'
+    templateUrl: 'customer-view.component.html',
 })
-
 export class CustomerViewComponent {
-    
+
     cases: Array<Case>;
     caseColumns: Array<Column>;
     orders: Array<Order>;
@@ -23,7 +20,7 @@ export class CustomerViewComponent {
               this.orders = this.getOrders();
         this.orderColumns = this.getOrderColumns();
     }
-    
+
     getCases(): Array<Case> {
         return [
             {caseId:'2014080912366',title:'DHS HV Case',dueDate:'015-01-03', category: 'High Voltage', createdBy: 'Bryan Barbour', assignedTo: 'dale.barbour@verizon.com', status: 'completed'},
@@ -42,10 +39,10 @@ export class CustomerViewComponent {
             new Column('createdBy','Created By'),
             new Column('assignedTo','Assigned To'),
             new Column('status','Status')
-            
+
         ];
     }
-    
+
     getOrders(): Array<Order> {
         return [
             {orderId:'560793',circuitId:'W187787',lconA:'015-01-03', lconB: 'High Voltage', customerRequestedDate: 'Bryan Barbour', vzCommittedDate: 'dale.barbour@verizon.com'},
@@ -63,10 +60,10 @@ export class CustomerViewComponent {
             new Column('lconB','Lcon B'),
             new Column('customerRequestedDate','Customer Requested Due Date'),
             new Column('vzCommittedDate','Vz Committed Due Date')
-            
+
         ];
     }
-  
+
 }
 interface Case {
     caseId:string;
@@ -85,5 +82,5 @@ interface Order {
     lconB: string;
     customerRequestedDate: string;
     vzCommittedDate: string
-    
+
 }

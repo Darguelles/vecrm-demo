@@ -7,7 +7,7 @@ const routes: Routes = [{
     path: 'portal',
     component: LayoutFreeComponent,
     children: [
-        { path: 'view', component: CustomerViewComponent }
+        { path: 'view', component: CustomerViewComponent },
     ]
 }];
 
