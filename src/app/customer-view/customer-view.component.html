@@ -57,24 +57,13 @@
 
 
 <div class="row">
-  <div class="col-lg-8  widget-container">
-    <div class="card-header" >
-      <h6>
-        <span class="fw-semi-bold">Case Managament Activities</span>
-      </h6>
-      <header>
-        <div class="widget-controls">
-          <a data-widgster="expand" title="Expand" href="#"><i class="glyphicon glyphicon-chevron-up"></i></a>
-          <a data-widgster="collapse" title="Collapse" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
-          <a data-widgster="load" title="I am spinning!" href="#"><i class="fa fa-refresh"></i></a>
-          <a data-widgster="close" title="Close" href="#"><i class="glyphicon glyphicon-remove"></i></a>
-        </div>
-      </header>
-    </div>
-    <section class="widget" widget id="shares-widget" data-widgster-load="assets/demo/grid/shares.php" data-post-processing="true">
 
-      <table class="table table-striped table-emails table-hover" id="folder-view">
-        <thead>
+<!--Case Managment Activities DIV-->
+
+  <card header="Case Managament Activities" class="col-lg-8">
+    <card-body class="card-block">
+        <table class="table table-striped table-emails table-hover" id="folder-view">
+          <thead>
           <tr>
             <th colspan="2" id="folder-actions">
               <button class="btn btn-info width-100 mb-xs" role="button">
@@ -93,20 +82,21 @@
               </div>
             </th>
           </tr>
-        </thead>
-      </table>
-      <div class="widget-body no-padding">
-        <grid [rows]="cases" [columns]="caseColumns"></grid>
-      </div>
-      <div class="col-lg-8">
-        <button class="btn btn-primary">Create New Case</button>
-      </div>
-    </section>
-  </div>
+          </thead>
+        </table>
+        <div class="widget-body no-padding">
+          <grid [rows]="cases" [columns]="caseColumns"></grid>
+        </div>
+    </card-body>
 
+    <card-footer>
+      <button class="btn btn-primary">Create New Case</button>
+    </card-footer>
+  </card>
 
+  <!--Billing and Customer Inquiries CARD-->
 
-  <card header="Billing and Customer Inquiries" >
+  <card header="Billing and Customer Inquiries" class="col-lg-4">
     <card-body class="card-block">
       <div class="clearfix">
         <ul class="nav nav-tabs pull-xs-left" id="myTab" role="tablist">
@@ -121,6 +111,33 @@
       <div class="tab-content mb-lg" id="myTabContent">
         <div role="tabpanel" class="tab-pane active in clearfix" id="basic" aria-labelledby="basic-tab" aria-expanded="true">
           <div class='row'>
+            <!--TODO make this auto replicable from angular backend-->
+            <div class="col-md-6 hidden-xs pod-border">
+              <div class="panel panel-primary">
+                <div class="panel-body orders-container-box contenttext">
+                  Unresolved Billing Inquiries
+                </div>
+                <div class="widget-controls">
+                  <a data-widgster="collapse" title="Collapse" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
+                </div>
+              </div>
+              <div>
+                <label class="billingnumbertext" for="ontrack">0</label>
+              </div>
+            </div>
+            <div class="col-md-6 hidden-xs  pod-border">
+              <div class="panel panel-primary">
+                <div class="panel-body orders-container-box contenttext">
+                  Denied inquiries Awaiting Closure
+                </div>
+                <div class="widget-controls">
+                  <a data-widgster="collapse" title="Collapse" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
+                </div>
+              </div>
+              <div>
+                <label class="billingnumbertext" for="ontrack">0</label>
+              </div>
+            </div>
             <div class="col-md-6 hidden-xs pod-border">
               <div class="panel panel-primary">
                 <div class="panel-body orders-container-box contenttext">
