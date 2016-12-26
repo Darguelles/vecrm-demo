@@ -1,0 +1,22 @@
+<div class="js-sidebar-content">
+  <header class="logo hidden-sm-down">
+    <a href="index.html">{{config.name}}</a>
+  </header>
+  <div class="sidebar-status hidden-md-up">
+  </div>
+  <!-- main notification links are placed inside of .sidebar-nav -->
+  <ul class="sidebar-nav">
+    <li>
+      <a class="collapsed" data-target="#sidebar-dashboard" data-toggle="collapse" data-parent="#sidebar">
+          <span class="icon">
+            <i class="fa fa-desktop"></i>
+          </span>
+        Shift
+        <i class="toggle fa fa-angle-down"></i>
+      </a>
+      <ul id="sidebar-dashboard" class="collapse">
+        <li><a [routerLink]=" ['dashboard'] ">Dashboard</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>

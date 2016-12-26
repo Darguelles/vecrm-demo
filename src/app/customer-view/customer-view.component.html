@@ -1,0 +1,341 @@
+<style>
+  body {
+    overflow-x: visible;
+  }
+  
+  .pod-border {
+    border: 1px solid #ccc;
+    padding: 5px;
+  }
+  
+  .billingnumbertext {
+    display: block!important;
+    height: 48px;
+    color: #ff7000;
+    font-size: 48px;
+    line-height: 48px;
+    font-family: verizon_apexbook;
+    font-weight: 700;
+    padding: 0!important;
+    text-align: center !important;
+  }
+  
+  .orders-container-box .contenttext {
+    width: 70%!important;
+    display: block!important;
+    position: relative!important;
+    top: 0!important;
+    left: 0!important;
+    line-height: 16px;
+    margin: 4px 0!important;
+    padding: 0!important;
+  }
+  
+  .contenttext {
+    color: #92b4cb;
+    font-size: 14px;
+    width: 168px;
+    clear: right;
+    display: block;
+    position: relative;
+    font-family: tahoma;
+  }
+  
+  .sprite-icon-background,
+  .brchecked .x-form-radio {
+    background: transparent url(https://vecrmqa4.ebiz.verizon.com/vecrm/customer/resources/icon/vecrm-landingpageicons-sprite.png) no-repeat 0 0;
+    display: inline-block;
+  }
+  
+  .sprite-billinginquiries {
+    background-position: 0 -1633px;
+    width: 40px;
+    height: 40px;
+  }
+</style>
+
+
+<div class="row">
+  <div class="col-lg-8  widget-container">
+    <section class="widget" widget id="shares-widget" data-widgster-load="assets/demo/grid/shares.php" data-post-processing="true">
+      <h6>
+          <span class="tag tag-primary"></span> 
+          Case Managament <span class="fw-semi-bold">Activities</span>
+        </h6>
+      <header>
+        <div class="widget-controls">
+          <a data-widgster="expand" title="Expand" href="#"><i class="glyphicon glyphicon-chevron-up"></i></a>
+          <a data-widgster="collapse" title="Collapse" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
+          <a data-widgster="load" title="I am spinning!" href="#"><i class="fa fa-refresh"></i></a>
+          <a data-widgster="close" title="Close" href="#"><i class="glyphicon glyphicon-remove"></i></a>
+        </div>
+      </header>
+      <table class="table table-striped table-emails table-hover" id="folder-view">
+        <thead>
+          <tr>
+            <th colspan="2" id="folder-actions">
+              <button class="btn btn-info width-100 mb-xs" role="button">
+                Current
+              </button>
+              <button class="btn btn-gray width-100 mb-xs" role="button">
+                Archived
+              </button>
+            </th>
+            <th>
+              <div class="input-group">
+                <input type="search" class="form-control" id="search-input">
+                <span class="input-group-btn">
+                      <button type="button" class="btn btn-secondary">Search</button>
+                    </span>
+              </div>
+            </th>
+          </tr>
+        </thead>
+      </table>
+      <div class="widget-body no-padding">
+        <grid [rows]="cases" [columns]="caseColumns"></grid>
+      </div>
+      <div class="col-lg-8">
+        <button class="btn btn-primary">Create New Case</button>
+      </div>
+    </section>
+  </div>
+  <div class="col-lg-4  widget-container">
+    <section class="widget" widget id="shares-widget" data-widgster-load="assets/demo/grid/shares.php" data-post-processing="true">
+      <h6>
+          <span class="tag tag-primary"></span> 
+          Billing and Customer <span class="fw-semi-bold">Inquiries</span>
+        </h6>
+      <header>
+        <div class="widget-controls">
+          <a data-widgster="expand" title="Expand" href="#"><i class="glyphicon glyphicon-chevron-up"></i></a>
+          <a data-widgster="collapse" title="Collapse" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
+          <a data-widgster="load" title="I am spinning!" href="#"><i class="fa fa-refresh"></i></a>
+          <a data-widgster="close" title="Close" href="#"><i class="glyphicon glyphicon-remove"></i></a>
+        </div>
+      </header>
+      <div class="clearfix">
+        <ul class="nav nav-tabs pull-xs-left" id="myTab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#basic" role="tab" aria-controls="basic" aria-expanded="true">Customer Care (NQ)</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#assumtion" role="tab" aria-controls="assumtion" aria-expanded="false">Service Engagament Tool (SET)</a>
+          </li>
+        </ul>
+      </div>
+      <div class="tab-content mb-lg" id="myTabContent">
+        <div role="tabpanel" class="tab-pane active in clearfix" id="basic" aria-labelledby="basic-tab" aria-expanded="true">
+          <div class='row'>
+            <div class="col-md-6 hidden-xs pod-border">
+              <div class="panel panel-primary">
+                <div class="panel-body orders-container-box contenttext">
+                  Unresolved Billing Inquiries
+                </div>
+                <div class="widget-controls">
+                  <a data-widgster="collapse" title="Collapse" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
+                </div>
+              </div>
+              <div>
+                <label class="billingnumbertext" for="ontrack">0</label>
+              </div>
+            </div>
+            <div class="col-md-6 hidden-xs  pod-border">
+              <div class="panel panel-primary">
+                <div class="panel-body orders-container-box contenttext">
+                  Denied inquiries Awaiting Closure
+                </div>
+                <div class="widget-controls">
+                  <a data-widgster="collapse" title="Collapse" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
+                </div>
+              </div>
+              <div>
+                <label class="billingnumbertext" for="ontrack">0</label>
+              </div>
+            </div>
+          </div>
+          <div class="pull-xs-right">
+            <button class="btn btn-inverse">View Billing Invoice</button>
+            <button class="btn btn-primary">Create Bill Inquiry</button>
+          </div>
+        </div>
+        <div class="tab-pane" id="assumtion" role="tabpanel" aria-labelledby="assumtion-tab" aria-expanded="false">
+          <p>Why don't use Lore Ipsum? I think if some one says don't use lore ipsum it's very controversial point. I think
+            the opposite actually. Everyone knows what is lore ipsum - it is easy to understand if text is lore ipsum.</p>
+          <div class="clearfix">
+            <div class="btn-toolbar">
+              <a class="btn btn-default" href="#">&nbsp;&nbsp;Check&nbsp;&nbsp;</a>
+              <a class="btn btn-primary" href="#">&nbsp;&nbsp;Dance?&nbsp;&nbsp;</a>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane" id="dropdown1" role="tabpanel" aria-labelledby="dropdown1-tab" aria-expanded="false">
+          <p> If you will think too much it will sink in the swamp of never implemented plans and ideas or will just go away
+            or will be implemented by someone else.</p>
+          <p><strong>5 months of doing everything to achieve nothing.</strong></p>
+          <p>You'll automatically skip - because you know - it's just non-informative stub. But what if there some text like
+            this one?
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="col-lg-6  widget-container">
+    <section class="widget" widget id="shares-widget" data-widgster-load="assets/demo/grid/shares.php" data-post-processing="true">
+      <h6>
+          <span class="tag tag-primary"></span> 
+          <span class="fw-semi-bold">Orders</span>
+        </h6>
+      <header>
+        <div class="widget-controls">
+          <a data-widgster="expand" title="Expand" href="#"><i class="glyphicon glyphicon-chevron-up"></i></a>
+          <a data-widgster="collapse" title="Collapse" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
+          <a data-widgster="load" title="I am spinning!" href="#"><i class="fa fa-refresh"></i></a>
+          <a data-widgster="close" title="Close" href="#"><i class="glyphicon glyphicon-remove"></i></a>
+        </div>
+      </header>
+      <div class="widget-body padding">
+        <button class="btn btn-info width-100 mb-xs" role="button">
+          0 - 180 Days
+        </button>
+        <button class="btn btn-gray width-100 mb-xs" role="button">
+          0 - 360 Days
+        </button>
+      </div>
+      <div class="widget-body padding">
+        <div class="row">
+          <div class="col-md-4 hidden-xs pod-border">
+            <div class="widget">
+              <div class="panel panel-secondary">
+                <div class="panel-body orders-container-box contenttext">
+                  Overude
+                </div>
+                <div class="widget-controls">
+                  <a data-widgster="collapse" title="Collapse" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
+                </div>
+                <div class="form-group">
+                  <label class="billingnumbertext" for="atrisk">247</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 hidden-xs pod-border">
+            <div class="widget">
+              <div class="panel panel-secondary">
+                <div class="panel-body orders-container-box contenttext">
+                  Pending
+                </div>
+                <div class="widget-controls">
+                  <a data-widgster="collapse" title="Collapse" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="billingnumbertext" for="ontrack">454</label>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 hidden-xs pod-border">
+            <div class="widget">
+              <div class="panel panel-primary">
+                <div class="panel-body orders-container-box contenttext">
+                  Completed
+                </div>
+                <div class="widget-controls">
+                  <a data-widgster="collapse" title="Collapse" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="billingnumbertext" for="ontrack">87</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="widget-body padding">
+        Overdue By
+        <button class="btn btn-info width-100 mb-xs" role="button">
+          All
+        </button>
+        <button class="btn btn-gray width-100 mb-xs" role="button">
+          0 - 30 Days
+        </button>
+        <button class="btn btn-gray width-100 mb-xs" role="button">
+          30 - 60 Days
+        </button>
+        <button class="btn btn-gray width-100 mb-xs" role="button">
+          60 - 90 Days
+        </button>
+        <button class="btn btn-gray width-100 mb-xs" role="button">
+          90 - 180 Days
+        </button>
+      </div>
+      <div class="widget-body padding">
+        <grid [rows]="orders" [columns]="orderColumns"></grid>
+      </div>
+    </section>
+  </div>
+  <div class="col-lg-6  widget-container">
+    <section class="widget" widget id="shares-widget" data-widgster-load="assets/demo/grid/shares.php" data-post-processing="true">
+      <h6>
+          <span class="tag tag-primary"></span> 
+          <span class="fw-semi-bold">Projects</span>
+        </h6>
+      <header>
+        <div class="widget-controls">
+          <a data-widgster="expand" title="Expand" href="#"><i class="glyphicon glyphicon-chevron-up"></i></a>
+          <a data-widgster="collapse" title="Collapse" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
+          <a data-widgster="load" title="I am spinning!" href="#"><i class="fa fa-refresh"></i></a>
+          <a data-widgster="close" title="Close" href="#"><i class="glyphicon glyphicon-remove"></i></a>
+        </div>
+      </header>
+      <div class="row">
+        <div class="col-md-4 col-sm-4 hidden-xs pod-border">
+          <div class="widget">
+            <div class="panel panel-primary">
+              <div class="panel-body orders-container-box contenttext">
+                <img class="x-icon sprite-icon-background insidepanel-icon x-icon-default sprite-billinginquiries" id="image-1166">                At Risk
+              </div>
+              <div class="widget-controls">
+                <a data-widgster="collapse" title="Collapse" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
+              </div>
+              <div class="form-group">
+                <label class="billingnumbertext" for="atrisk">0</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4 hidden-xs pod-border">
+          <div class="widget">
+            <div class="panel panel-primary">
+              <div class="panel-body orders-container-box contenttext">
+                <img class="x-icon sprite-icon-background insidepanel-icon x-icon-default sprite-billinginquiries" id="image-1166">                On Track
+              </div>
+              <div class="widget-controls">
+                <a data-widgster="collapse" title="Collapse" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="billingnumbertext" for="ontrack">0</label>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-4 hidden-xs pod-border">
+          <div class="widget">
+            <div class="panel panel-primary">
+              <div class="panel-body orders-container-box contenttext">
+                <img class="x-icon sprite-icon-background insidepanel-icon x-icon-default sprite-billinginquiries" id="image-1166">                Closed
+              </div>
+              <div class="widget-controls">
+                <a data-widgster="collapse" title="Collapse" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="billingnumbertext" for="ontrack">0</label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+  
+</div>
