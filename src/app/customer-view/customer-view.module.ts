@@ -6,12 +6,13 @@ import {CustomerViewRoutes}   from './customer-view.routes';
 import {CustomerViewService}   from './services/customer-view.service';
 import {Grid}   from '../grid/grid';
 import {CardComponent} from '../components/card.component.ts'
+import {OrderContainerComponent} from '../components/order.container.component.ts'
 
 
 @NgModule({
   imports: [BrowserModule, RouterModule, CustomerViewRoutes],
   exports: [],
-  declarations: [CustomerViewComponent, Grid, CardComponent],
+  declarations: [CustomerViewComponent, Grid, CardComponent, OrderContainerComponent],
   providers: [CustomerViewService],
   schemas: [NO_ERRORS_SCHEMA]
 })
