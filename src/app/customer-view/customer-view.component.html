@@ -1,61 +1,13 @@
 <style>
   html, body {
-    height:100%;
+    height: 100%;
   }
-
-  .pod-border {
-    border: 1px solid #ccc;
-    padding: 5px;
-  }
-
-  .billingnumbertext {
-    display: block !important;
-    height: 48px;
-    color: #ff7000;
-    font-size: 48px;
-    line-height: 48px;
-    font-family: verizon_apexbook;
-    font-weight: 700;
-    padding: 0 !important;
-    text-align: center !important;
-  }
-
-  /*.orders-container-box .contenttext {*/
-    /*width: 70% !important;*/
-    /*display: block !important;*/
-    /*position: relative !important;*/
-    /*top: 0 !important;*/
-    /*left: 0 !important;*/
-    /*line-height: 16px;*/
-    /*margin: 4px 0 !important;*/
-    /*padding: 0 !important;*/
-  /*}*/
-
-
-
-  .sprite-icon-background,
-  .brchecked .x-form-radio {
-    background: transparent url(https://vecrmqa4.ebiz.verizon.com/vecrm/customer/resources/icon/vecrm-landingpageicons-sprite.png) no-repeat 0 0;
-    display: inline-block;
-  }
-
-  .sprite-billinginquiries {
-    background-position: 0 -1633px;
-    width: 40px;
-    height: 40px;
-  }
-
-  /*.row {*/
-  /*display: flex; !* equal height of the children *!*/
-  /*}*/
-
 </style>
 
 
 <div class="row">
 
   <!--Case Managment Activities DIV-->
-
   <card header="Case Managament Activities" class="col-lg-8">
     <card-body class="card-block">
       <table class="table table-striped table-emails table-hover" id="folder-view">
@@ -91,7 +43,6 @@
   </card>
 
   <!--Billing and Customer Inquiries CARD-->
-
   <card header="Billing and Customer Inquiries" class="col-lg-4">
     <card-body class="card-block">
       <div class="clearfix">
@@ -111,16 +62,18 @@
              aria-expanded="true">
           <div class="row">
             <!--TODO make this auto replicable from angular backend-->
-            <order-container style="width:50%;" title="Unresolved Billing Inquiries" number=0></order-container>
-            <order-container style="width:50%;" title="Denied inquiries Awaiting Closure" number=0></order-container>
-            <order-container style="width:50%;" title="Approved Inquiries Awaiting Posting" number=0></order-container>
-            <order-container style="width:50%;" title="Inquiries Pending Approbal" number=0></order-container>
+            <order-container colorNumber="billingnumbertext" style="width:50%;" title="Unresolved Billing Inquiries" number=0 imagesource="" ></order-container>
+            <order-container colorNumber="billingnumbertext" style="width:50%;" title="Denied inquiries Awaiting Closure" number=0 imagesource="" ></order-container>
+            <order-container colorNumber="billingnumbertext" style="width:50%;" title="Approved Inquiries Awaiting Posting" number=0 imagesource="" ></order-container>
+            <order-container colorNumber="billingnumbertext" style="width:50%;" title="Inquiries Pending Approbal" number=0 imagesource="" ></order-container>
           </div>
         </div>
-        <!--<div class="tab-pane" id="assumtion" role="tabpanel" aria-labelledby="assumtion-tab" aria-expanded="false">-->
-        <!--<p>Why don't use Lore Ipsum? I think if some one says don't use lore ipsum it's very controversial point. I think-->
-        <!--the opposite actually. Everyone knows what is lore ipsum - it is easy to understand if text is lore ipsum.</p>-->
-        <!--</div>-->
+        <div class="tab-pane" id="assumtion" role="tabpanel" aria-labelledby="assumtion-tab" aria-expanded="false">
+          <p>Why don't use Lore Ipsum? I think if some one says don't use lore ipsum it's very controversial point. I
+            think
+            the opposite actually. Everyone knows what is lore ipsum - it is easy to understand if text is lore
+            ipsum.</p>
+        </div>
       </div>
     </card-body>
     <card-footer>
@@ -131,7 +84,6 @@
 
 
   <!--Orders CARD-->
-
   <card header="Orders" class="col-lg-6">
     <card-body class="card-block">
       <div class="widget-body padding">
@@ -144,9 +96,9 @@
       </div>
       <div class="widget-body">
         <div class="row">
-          <order-container class="col-md-4" title="Overide" number=247></order-container>
-          <order-container class="col-md-4" title="Pending" number=454></order-container>
-          <order-container class="col-md-4" title="Completed" number=87></order-container>
+          <order-container colorNumber="ordernumbertext" class="col-md-4" title="Overide" number=247 imagesource="" ></order-container>
+          <order-container colorNumber="ordernumbertext" class="col-md-4" title="Pending" number=454 imagesource=""></order-container>
+          <order-container colorNumber="ordernumbertext" class="col-md-4" title="Completed" number=87 imagesource=""></order-container>
         </div>
       </div>
       <br/>
@@ -177,171 +129,16 @@
 
   </card>
 
-  <!--<div class="col-lg-6  widget-container">-->
-  <!--<section class="widget" widget id="shares-widget" data-widgster-load="assets/demo/grid/shares.php" data-post-processing="true">-->
-  <!--<h6>-->
-  <!--<span class="tag tag-primary"></span>-->
-  <!--<span class="fw-semi-bold">Orders</span>-->
-  <!--</h6>-->
-  <!--<header>-->
-  <!--<div class="widget-controls">-->
-  <!--<a data-widgster="expand" title="Expand" href="#"><i class="glyphicon glyphicon-chevron-up"></i></a>-->
-  <!--<a data-widgster="collapse" title="Collapse" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>-->
-  <!--<a data-widgster="load" title="I am spinning!" href="#"><i class="fa fa-refresh"></i></a>-->
-  <!--<a data-widgster="close" title="Close" href="#"><i class="glyphicon glyphicon-remove"></i></a>-->
-  <!--</div>-->
-  <!--</header>-->
-  <!--<div class="widget-body padding">-->
-  <!--<button class="btn btn-info width-100 mb-xs" role="button">-->
-  <!--0 - 180 Days-->
-  <!--</button>-->
-  <!--<button class="btn btn-gray width-100 mb-xs" role="button">-->
-  <!--0 - 360 Days-->
-  <!--</button>-->
-  <!--</div>-->
-  <!--<div class="widget-body padding">-->
-  <!--<div class="row">-->
-  <!--<div class="col-md-4 hidden-xs pod-border">-->
-  <!--<div class="widget">-->
-  <!--<div class="panel panel-secondary">-->
-  <!--<div class="panel-body orders-container-box contenttext">-->
-  <!--Overude-->
-  <!--</div>-->
-  <!--<div class="widget-controls">-->
-  <!--<a data-widgster="collapse" title="Collapse" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>-->
-  <!--</div>-->
-  <!--<div class="form-group">-->
-  <!--<label class="billingnumbertext" for="atrisk">247</label>-->
-  <!--</div>-->
-  <!--</div>-->
-  <!--</div>-->
-  <!--</div>-->
-  <!--<div class="col-md-4 hidden-xs pod-border">-->
-  <!--<div class="widget">-->
-  <!--<div class="panel panel-secondary">-->
-  <!--<div class="panel-body orders-container-box contenttext">-->
-  <!--Pending-->
-  <!--</div>-->
-  <!--<div class="widget-controls">-->
-  <!--<a data-widgster="collapse" title="Collapse" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>-->
-  <!--</div>-->
-  <!--</div>-->
-  <!--<div class="form-group">-->
-  <!--<label class="billingnumbertext" for="ontrack">454</label>-->
-  <!--</div>-->
-  <!--</div>-->
-  <!--</div>-->
-  <!--<div class="col-md-4 hidden-xs pod-border">-->
-  <!--<div class="widget">-->
-  <!--<div class="panel panel-primary">-->
-  <!--<div class="panel-body orders-container-box contenttext">-->
-  <!--Completed-->
-  <!--</div>-->
-  <!--<div class="widget-controls">-->
-  <!--<a data-widgster="collapse" title="Collapse" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>-->
-  <!--</div>-->
-  <!--</div>-->
-  <!--<div class="form-group">-->
-  <!--<label class="billingnumbertext" for="ontrack">87</label>-->
-  <!--</div>-->
-  <!--</div>-->
-  <!--</div>-->
-  <!--</div>-->
-  <!--</div>-->
-  <!--<div class="widget-body padding">-->
-  <!--Overdue By-->
-  <!--<button class="btn btn-info width-100 mb-xs" role="button">-->
-  <!--All-->
-  <!--</button>-->
-  <!--<button class="btn btn-gray width-100 mb-xs" role="button">-->
-  <!--0 - 30 Days-->
-  <!--</button>-->
-  <!--<button class="btn btn-gray width-100 mb-xs" role="button">-->
-  <!--30 - 60 Days-->
-  <!--</button>-->
-  <!--<button class="btn btn-gray width-100 mb-xs" role="button">-->
-  <!--60 - 90 Days-->
-  <!--</button>-->
-  <!--<button class="btn btn-gray width-100 mb-xs" role="button">-->
-  <!--90 - 180 Days-->
-  <!--</button>-->
-  <!--</div>-->
-  <!--<div class="widget-body padding">-->
-  <!--<grid [rows]="orders" [columns]="orderColumns"></grid>-->
-  <!--</div>-->
-  <!--</section>-->
-  <!--</div>-->
-
-
-  <div class="col-lg-6  widget-container">
-    <section class="widget" widget id="shares-widget" data-widgster-load="assets/demo/grid/shares.php"
-             data-post-processing="true">
-      <h6>
-        <span class="tag tag-primary"></span>
-        <span class="fw-semi-bold">Projects</span>
-      </h6>
-      <header>
-        <div class="widget-controls">
-          <a data-widgster="expand" title="Expand" href="#"><i class="glyphicon glyphicon-chevron-up"></i></a>
-          <a data-widgster="collapse" title="Collapse" href="#"><i class="glyphicon glyphicon-chevron-down"></i></a>
-          <a data-widgster="load" title="I am spinning!" href="#"><i class="fa fa-refresh"></i></a>
-          <a data-widgster="close" title="Close" href="#"><i class="glyphicon glyphicon-remove"></i></a>
-        </div>
-      </header>
+  <!--Projects CARD-->
+  <card header="Projects" class="col-lg-6  widget-container">
+    <card-body>
       <div class="row">
-        <div class="col-md-4 col-sm-4 hidden-xs pod-border">
-          <div class="widget">
-            <div class="panel panel-primary">
-              <div class="panel-body orders-container-box contenttext">
-                <img class="x-icon sprite-icon-background insidepanel-icon x-icon-default sprite-billinginquiries"
-                     id="image-1166"> At Risk
-              </div>
-              <div class="widget-controls">
-                <a data-widgster="collapse" title="Collapse" href="#"><i
-                  class="glyphicon glyphicon-chevron-down"></i></a>
-              </div>
-              <div class="form-group">
-                <label class="billingnumbertext" for="atrisk">0</label>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-4 hidden-xs pod-border">
-          <div class="widget">
-            <div class="panel panel-primary">
-              <div class="panel-body orders-container-box contenttext">
-                <img class="x-icon sprite-icon-background insidepanel-icon x-icon-default sprite-billinginquiries"
-                     id="image-1166"> On Track
-              </div>
-              <div class="widget-controls">
-                <a data-widgster="collapse" title="Collapse" href="#"><i
-                  class="glyphicon glyphicon-chevron-down"></i></a>
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="billingnumbertext" for="ontrack">0</label>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-4 hidden-xs pod-border">
-          <div class="widget">
-            <div class="panel panel-primary">
-              <div class="panel-body orders-container-box contenttext">
-                <img class="x-icon sprite-icon-background insidepanel-icon x-icon-default sprite-billinginquiries"
-                     id="image-1166"> Closed
-              </div>
-              <div class="widget-controls">
-                <a data-widgster="collapse" title="Collapse" href="#"><i
-                  class="glyphicon glyphicon-chevron-down"></i></a>
-              </div>
-            </div>
-            <div class="form-group">
-              <label class="billingnumbertext" for="ontrack">0</label>
-            </div>
-          </div>
-        </div>
+        <order-container colorNumber="projectnumbertext" class="col-md-4" title="At Risk" number=0 imagesource=""></order-container>
+        <order-container colorNumber="projectnumbertext" class="col-md-4" title="On Track" number=0 imagesource=""></order-container>
+        <order-container colorNumber="projectnumbertext" class="col-md-4" title="Closed" number=0 imagesource=""></order-container>
       </div>
-    </section>
-  </div>
+    </card-body>
+
+  </card>
 
 </div>

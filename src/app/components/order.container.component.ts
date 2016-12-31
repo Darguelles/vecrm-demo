@@ -7,4 +7,7 @@ import {Component, Input, Output} from '@angular/core';
 export class OrderContainerComponent {
   @Input() title: string = '';
   @Input() number: number = 0;
+  @Input() imageId: string = '';
+  @Input() imageSource: string = '';
+  @Input() colorNumber: string = '';
 }
