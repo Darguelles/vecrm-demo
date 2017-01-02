@@ -1,14 +1,4 @@
 <style>
-  /*.orders-container-box .contenttext {*/
-  /*width: 70% !important;*/
-  /*display: block !important;*/
-  /*position: relative !important;*/
-  /*top: 0 !important;*/
-  /*left: 0 !important;*/
-  /*line-height: 16px;*/
-  /*margin: 4px 0 !important;*/
-  /*padding: 0 !important;*/
-  /*}*/
 
   .billingnumbertext {
     display: block;
@@ -26,13 +16,13 @@
   }
 
   .panel-order-title {
-    width: 70%;
+    width: 80%;
   }
 
   .contenttext {
     color: #92b4cb;
     font-size: 14px;
-    width: 168px;
+    /*width: 168px;*/
     clear: right;
     display: block;
     position: relative;
@@ -76,18 +66,28 @@
     margin-left: 1em;
   }
 
+  .salestnumbertext {
+    display: block;
+    height: 48px;
+    color: #5ac2f3;
+    font-size: 48px;
+    line-height: 48px;
+    text-align: left;
+    margin-left: 1em;
+  }
+
 </style>
 
 <div class="col-md-4 hidden-xs pod-border">
   <div class="panel panel-primary panel-order-title">
     <div class="panel-body orders-container-box contenttext">
       <div class="row">
-        <div class="col-md-1 order-image">
+        <div class="order-image" style="width: 25%">
           <img class="x-icon sprite-icon-background insidepanel-icon x-icon-default sprite-billinginquiries"
                src="{{imageSource}}"
                id="{{imageId}}">
         </div>
-        <div>
+        <div style="width: 70%">
           {{title}}
         </div>
       </div>
