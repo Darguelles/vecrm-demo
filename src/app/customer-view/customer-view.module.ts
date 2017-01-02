@@ -7,12 +7,13 @@ import {CustomerViewService}   from './services/customer-view.service';
 import {Grid}   from '../grid/grid';
 import {CardComponent} from '../components/card.component.ts'
 import {OrderContainerComponent} from '../components/order.container.component.ts'
+import {SearchBarComponent} from '../components/search.bar.component'
 
 
 @NgModule({
   imports: [BrowserModule, RouterModule, CustomerViewRoutes],
   exports: [],
-  declarations: [CustomerViewComponent, Grid, CardComponent, OrderContainerComponent],
+  declarations: [CustomerViewComponent, Grid, CardComponent, OrderContainerComponent, SearchBarComponent],
   providers: [CustomerViewService],
   schemas: [NO_ERRORS_SCHEMA]
 })

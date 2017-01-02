@@ -62,10 +62,14 @@
              aria-expanded="true">
           <div class="row">
             <!--TODO make this auto replicable from angular backend-->
-            <order-container colorNumber="billingnumbertext" style="width:50%;" title="Unresolved Billing Inquiries" number=0 imagesource="" ></order-container>
-            <order-container colorNumber="billingnumbertext" style="width:50%;" title="Denied inquiries Awaiting Closure" number=0 imagesource="" ></order-container>
-            <order-container colorNumber="billingnumbertext" style="width:50%;" title="Approved Inquiries Awaiting Posting" number=0 imagesource="" ></order-container>
-            <order-container colorNumber="billingnumbertext" style="width:50%;" title="Inquiries Pending Approbal" number=0 imagesource="" ></order-container>
+            <order-container colorNumber="billingnumbertext" style="width:50%;" title="Unresolved Billing Inquiries"
+                             number=0 imagesource=""></order-container>
+            <order-container colorNumber="billingnumbertext" style="width:50%;"
+                             title="Denied inquiries Awaiting Closure" number=0 imagesource=""></order-container>
+            <order-container colorNumber="billingnumbertext" style="width:50%;"
+                             title="Approved Inquiries Awaiting Posting" number=0 imagesource=""></order-container>
+            <order-container colorNumber="billingnumbertext" style="width:50%;" title="Inquiries Pending Approbal"
+                             number=0 imagesource=""></order-container>
           </div>
         </div>
         <div class="tab-pane" id="assumtion" role="tabpanel" aria-labelledby="assumtion-tab" aria-expanded="false">
@@ -96,9 +100,12 @@
       </div>
       <div class="widget-body">
         <div class="row">
-          <order-container colorNumber="ordernumbertext" class="col-md-4" title="Overide" number=247 imagesource="" ></order-container>
-          <order-container colorNumber="ordernumbertext" class="col-md-4" title="Pending" number=454 imagesource=""></order-container>
-          <order-container colorNumber="ordernumbertext" class="col-md-4" title="Completed" number=87 imagesource=""></order-container>
+          <order-container colorNumber="ordernumbertext" class="col-md-4" title="Overide" number=247
+                           imagesource=""></order-container>
+          <order-container colorNumber="ordernumbertext" class="col-md-4" title="Pending" number=454
+                           imagesource=""></order-container>
+          <order-container colorNumber="ordernumbertext" class="col-md-4" title="Completed" number=87
+                           imagesource=""></order-container>
         </div>
       </div>
       <br/>
@@ -130,15 +137,46 @@
   </card>
 
   <!--Projects CARD-->
-  <card header="Projects" class="col-lg-6  widget-container">
-    <card-body>
-      <div class="row">
-        <order-container colorNumber="projectnumbertext" class="col-md-4" title="At Risk" number=0 imagesource=""></order-container>
-        <order-container colorNumber="projectnumbertext" class="col-md-4" title="On Track" number=0 imagesource=""></order-container>
-        <order-container colorNumber="projectnumbertext" class="col-md-4" title="Closed" number=0 imagesource=""></order-container>
-      </div>
-    </card-body>
+  <div class="col-lg-6">
+    <card header="Projects" class="widget-container">
+      <card-body>
+        <div style="margin: 1em" class="row">
+          <div class="input-group col-md-6">
+          </div>
+          <div class="input-group col-md-6">
+            <search-bar style="width: 100%"></search-bar>
+          </div>
 
-  </card>
+        </div>
+        <div class="row">
+          <order-container colorNumber="projectnumbertext" class="col-md-4" title="At Risk" number=0
+                           imagesource=""></order-container>
+          <order-container colorNumber="projectnumbertext" class="col-md-4" title="On Track" number=0
+                           imagesource=""></order-container>
+          <order-container colorNumber="projectnumbertext" class="col-md-4" title="Closed" number=0
+                           imagesource=""></order-container>
+        </div>
+      </card-body>
+
+    </card>
+
+    <!--Sales CARD-->
+    <card header="Sales" class=" widget-container">
+      <card-body>
+        <div class="row">
+          <order-container colorNumber="salestnumbertext" class="col-md-6" title="Lead Referrals" number=0
+                           imagesource=""></order-container>
+          <order-container colorNumber="salestnumbertext" class="col-md-6" title="Opportunities" number=499
+                           imagesource=""></order-container>
+          <!--<order-container colorNumber="projectnumbertext" class="col-md-4" title="Closed" number=0 imagesource=""></order-container>-->
+        </div>
+      </card-body>
+      <card-footer>
+        <button class="btn btn-primary">Submit a GOLD Lead</button>
+      </card-footer>
+
+    </card>
+  </div>
+
 
 </div>
