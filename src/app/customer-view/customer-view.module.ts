@@ -8,12 +8,13 @@ import {Grid}   from '../grid/grid';
 import {CardComponent} from '../components/card.component.ts'
 import {OrderContainerComponent} from '../components/order.container.component.ts'
 import {SearchBarComponent} from '../components/search.bar.component'
+import {CircleReportComponent} from '../report/circle.report.component'
 
 
 @NgModule({
   imports: [BrowserModule, RouterModule, CustomerViewRoutes],
   exports: [],
-  declarations: [CustomerViewComponent, Grid, CardComponent, OrderContainerComponent, SearchBarComponent],
+  declarations: [CustomerViewComponent, Grid, CardComponent, OrderContainerComponent, SearchBarComponent, CircleReportComponent],
   providers: [CustomerViewService],
   schemas: [NO_ERRORS_SCHEMA]
 })
