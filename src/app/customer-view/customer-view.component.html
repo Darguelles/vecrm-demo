@@ -2,6 +2,32 @@
   html, body {
     height: 100%;
   }
+
+  .btn-create-case{
+    background-color: #910308;
+    color: white;
+  }
+
+  .btn-view{
+    background-color: #777777;
+    color: white;
+  }
+
+  .btn-create-bill{
+    background-color: darkorange;
+    color: white;
+  }
+
+  .btn-create-order{
+    background-color: brown;
+    color: white;
+  }
+
+  .btn-submit-project{
+    background-color: #5d8fc2;
+    color: white;
+  }
+
 </style>
 
 
@@ -25,7 +51,7 @@
             <div class="input-group">
               <input type="search" class="form-control" id="search-input">
               <span class="input-group-btn">
-                      <button type="button" class="btn btn-secondary">Search</button>
+                      <button type="button" class="btn btn-create-case">Search</button>
                     </span>
             </div>
           </th>
@@ -37,8 +63,10 @@
       </div>
     </card-body>
 
-    <card-footer>
-      <button class="btn btn-primary">Create New Case</button>
+    <card-footer  style="text-align: right">
+      <div class="text-right">
+        <button class="btn btn-primary">Create New Case</button>
+      </div>
     </card-footer>
   </card>
 
@@ -80,9 +108,11 @@
         </div>
       </div>
     </card-body>
-    <card-footer>
-      <a class="btn btn-default" href="#">&nbsp;&nbsp;Check&nbsp;&nbsp;</a>
-      <a class="btn btn-primary" href="#">&nbsp;&nbsp;Dance?&nbsp;&nbsp;</a>
+    <card-footer  style="text-align: right">
+      <div class="text-right">
+        <button class="btn btn-view">&nbsp;&nbsp;View Billing Invoice&nbsp;&nbsp;</button>
+        <button class="btn btn-create-bill">&nbsp;&nbsp;Create Bill Inquiry&nbsp;&nbsp;</button>
+      </div>
     </card-footer>
   </card>
 
@@ -168,11 +198,12 @@
                            imagesource=""></order-container>
           <order-container colorNumber="salestnumbertext" class="col-md-6" title="Opportunities" number=499
                            imagesource=""></order-container>
-          <!--<order-container colorNumber="projectnumbertext" class="col-md-4" title="Closed" number=0 imagesource=""></order-container>-->
         </div>
       </card-body>
-      <card-footer>
-        <button class="btn btn-primary">Submit a GOLD Lead</button>
+      <card-footer style="text-align: right">
+        <div class="text-right">
+          <button class="btn btn-submit-project">Submit a GOLD Lead</button>
+        </div>
       </card-footer>
 
     </card>
