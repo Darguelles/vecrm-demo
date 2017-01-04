@@ -1,8 +1,16 @@
 <style>
 
   .container-circle-report{
-    margin: 1em;
-    height: 250px;
+    /*margin-inside: 1em;*/
+    /*height: 250px;*/
+    /*border: 1px solid #ccc;*/
+    /*padding: 5px;*/
+    margin-inside: 2em;
+    border: 1px solid #ccc;
+    padding: 5px;
+    padding: 2em;
+    height: 23em;
+    text-align: center;
   }
 
   .circle {
@@ -20,50 +28,78 @@
     left: 74%;
     display: block;
     border: 3px solid #fff;
-    margin-left: -65px;
+    margin-left: -57px;
     margin-top: 50px;
   }
 
   #circle3 {
-    width: 95px;
-    height: 95px;
+    width: 90px;
+    height: 90px;
     background: #00abff;
     position: relative;
     border: 3px solid #fff;
-    padding-left: 20px;
-    margin-left: 100px;
+    /*padding-left: 20px;*/
+    margin-left: 92px;
   }
 
   #circle5 {
     width: 120px;
     height: 120px;
     background: #a71313;
-    position: relative;
+    position: absolute;
     border: 3px solid #fff;
-    margin-left: -165px;
-    margin-top: -40px;
+    margin-left: -162px;
+    margin-top: -90px;
+  }
+
+  .base-font{
+    font-size: small;
+    text-align: -webkit-center;
+    color: antiquewhite;
+  }
+
+  .number-circle3{
+     font-size: xx-large;
+     margin-top: 30px;
+   }
+
+  .number-circle4{
+    font-size: xx-large;
+    margin-top: 30px;
+  }
+
+  .number-circle5{
+    font-size: -webkit-xxx-large;
+    margin-top: 40px;
+  }
+
+  .legend-label{
+    margin-top: 8em;
+    color: darkgray;
   }
 
 </style>
 
 
 <div class="container-circle-report">
-  <h5>Incident Tickets</h5>
-  <h6>Updated date xxxxx</h6>
-  <div class="circle" id="circle3">
-    <label>100</label>
+  <h4>INCIDENT TICKETS</h4>
+  <h6 style="color: darkgrey">Updated date xxxxx</h6>
+  <div class="circle base-font" id="circle3">
+    <label class="number-circle3">100</label>
     <br/>
-    <label>Pri 3</label>
-    <div class="circle" id="circle4">
-      <label>450</label>
+    Pri 3
+    <div class="circle " id="circle4">
+      <label class="number-circle4">450</label>
       <br/>
-      <label>Pri 2</label>
+      Pri 2
       <div class="circle" id="circle5">
-        <label>900</label>
+        <label class="number-circle5">900</label>
         <br/>
-        <label>Pri 1</label>
+        Pri 1
       </div>
     </div>
   </div>
-  <!--<h6>Total incident tickets: 1000</h6>-->
+  <!--<div>-->
+    <label class="legend-label">Total incident tickets: 1000</label>
+  <!--</div>-->
 </div>
