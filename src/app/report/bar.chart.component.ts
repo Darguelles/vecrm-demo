@@ -8,17 +8,67 @@ let template = require('./bar.chart.component.html');
   template: template
 })
 export class BarChartComponent {
+
   public barChartOptions:any = {
+    hover: {
+      // Overrides the global setting
+      mode: 'index'
+    },
+    tooltips: {
+      enabled: false
+    },
+    scaleStepWidth: 30,
     scaleShowVerticalLines: false,
-    responsive: true
+    responsive: true,
+    scales: {
+      yAxes: [{
+        barThickness: 40,
+        position: 'right',
+        gridLines: {
+          display: false,
+          color: "#fff",
+          zeroLineColor: "#fff",
+          zeroLineWidth: 0
+        },
+        ticks: { //Tipo de letra
+          fontFamily: "'Open Sans Bold', sans-serif",
+          fontSize: 15,
+          max: 5,
+          min: 0,
+          stepSize: 2
+        },
+        barPercentage: 0.5,
+        categoryPercentage: 1.0
+      }],
+      xAxes: [{
+        position: 'left',
+        display: true,
+        categoryPercentage: 0.9
+      }]
+    }
   };
-  public barChartLabels:string[] = ['2006', '2007', '2008', '2009', '2010', '2011', '2012'];
-  public barChartType:string = 'bar';
-  public barChartLegend:boolean = true;
+  public barChartLabels:string[] = ['New York City', 'Austin', 'Los Angeles', 'Miami', 'Chicago'];
+  public barChartType:string = 'horizontalBar';
+  public barChartLegend:boolean = false;
+  public maintainAspectRatio:boolean = true;
+  public fullWidth:boolean = true;
 
   public barChartData:any[] = [
-    {data: [65, 59, 80, 81, 56, 55, 40], label: 'Series A'},
-    {data: [28, 48, 40, 19, 86, 27, 90], label: 'Series B'}
+    {
+      data: [10, 8, 6, 4, 2],
+      label: 'Series A',
+      fillColor: 'rgba(54, 162, 235, 0.2)',
+      backgroundColor: "#ff6c23",
+      borderColor: [
+        'blue',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)'
+      ],
+      borderWidth: 1,
+      // scaleSteps: 10,
+      scaleStepWidth: 20,
+      // borderWidth: 1,
+      }
   ];
 
   // events
@@ -30,24 +80,4 @@ export class BarChartComponent {
     console.log(e);
   }
 
-  public randomize():void {
-    // Only Change 3 values
-    let data = [
-      Math.round(Math.random() * 100),
-      59,
-      80,
-      (Math.random() * 100),
-      56,
-      (Math.random() * 100),
-      40];
-    let clone = JSON.parse(JSON.stringify(this.barChartData));
-    clone[0].data = data;
-    this.barChartData = clone;
-    /**
-     * (My guess), for Angular to recognize the change in the dataset
-     * it has to change the dataset variable directly,
-     * so one way around it, is to clone the data, change it and then
-     * assign it;
-     */
-  }
 }

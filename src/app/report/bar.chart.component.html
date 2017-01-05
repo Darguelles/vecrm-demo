@@ -1,15 +1,32 @@
+<style>
+  .container-circle-report{
+    /*margin-inside: 1em;*/
+    /*height: 250px;*/
+    /*border: 1px solid #ccc;*/
+    /*padding: 5px;*/
+    margin-inside: 2em;
+    border: 1px solid #ccc;
+    padding: 5px;
+    padding: 2em;
+    height: 23em;
+    text-align: center;
+  }
+</style>
 
-
-<div>
-  <div style="display: block">
+<div class="container-circle-report">
+  <h4>SERVICE REQUEST</h4>
+  <h6 style="color: darkgrey">Updated date xxxxx</h6>
+  <div>
     <canvas baseChart
             [datasets]="barChartData"
             [labels]="barChartLabels"
             [options]="barChartOptions"
             [legend]="barChartLegend"
             [chartType]="barChartType"
+            [maintainAspectRatio]="maintainAspectRatio"
+            [fullWidth]="fullWidth"
             (chartHover)="chartHovered($event)"
             (chartClick)="chartClicked($event)"></canvas>
   </div>
-  <button (click)="randomize()">Update</button>
+  <!--<button (click)="randomize()">Update</button>-->
 </div>
