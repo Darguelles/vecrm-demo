@@ -11,9 +11,8 @@ export class BarChartComponent {
 
 
   public barChartOptions:any = {
-    scaleStepWidth: 30,
+    // scaleStepWidth: 30,
     scaleShowVerticalLines: false,
-
     responsive: true,
     showTooltips : true,
     scales: {
@@ -28,10 +27,10 @@ export class BarChartComponent {
         },
         ticks: { //Tipo de letra
           fontFamily: "'Open Sans Bold', sans-serif",
-          fontSize: 15,
+          fontSize: 12,
           max: 5,
           min: 0,
-          stepSize: 2
+          stepSize: 1
         },
         barPercentage: 0.5,
         categoryPercentage: 1.0
