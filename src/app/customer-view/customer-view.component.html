@@ -3,27 +3,27 @@
     height: 100%;
   }
 
-  .btn-create-case{
+  .btn-create-case {
     background-color: #910308;
     color: white;
   }
 
-  .btn-view{
-    background-color: #777777;
+  .btn-view {
+    background-color: rgb(126, 157, 176);
     color: white;
   }
 
-  .btn-create-bill{
+  .btn-create-bill {
     background-color: darkorange;
     color: white;
   }
 
-  .btn-create-order{
+  .btn-create-order {
     background-color: brown;
     color: white;
   }
 
-  .btn-submit-project{
+  .btn-submit-project {
     background-color: #5d8fc2;
     color: white;
   }
@@ -60,7 +60,7 @@
       </div>
     </card-body>
 
-    <card-footer  style="text-align: right">
+    <card-footer style="text-align: right">
       <div class="text-right">
         <button class="btn btn-primary">Create New Case</button>
       </div>
@@ -105,7 +105,7 @@
         </div>
       </div>
     </card-body>
-    <card-footer  style="text-align: right">
+    <card-footer style="text-align: right">
       <div class="text-right">
         <button class="btn btn-view">&nbsp;&nbsp;View Billing Invoice&nbsp;&nbsp;</button>
         <button class="btn btn-create-bill">&nbsp;&nbsp;Create Bill Inquiry&nbsp;&nbsp;</button>
@@ -226,15 +226,23 @@
   <card header="Service Management" class=" widget-container col-lg-6">
     <card-body>
       <div class="row">
+
         <circle-report class="col-md-4"></circle-report>
-        <div>
-          <bar-chart></bar-chart>
-        </div>
+        <bar-chart class="col-md-4"></bar-chart>
+        <event-report class="col-md-4"></event-report>
+
+        <button-container title="View All Tickets" class="col-md-4"></button-container>
+        <button-container title="View All Alarms" class="col-md-4"></button-container>
+        <button-container title="Schedule Events" class="col-md-4"></button-container>
+
+
+
+
       </div>
     </card-body>
     <card-footer style="text-align: right">
       <div class="text-right">
-        <button class="btn btn-submit-project">Submit a GOLD Lead</button>
+        <button class="btn btn-view">View All Requests</button>
       </div>
     </card-footer>
 
