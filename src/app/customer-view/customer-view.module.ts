@@ -14,12 +14,14 @@ import {BarChartComponent} from '../report/bar.chart.component'
 import {EventReportComponent} from '../report/event.report.component';
 import {ButtonContainerComponent} from '../components/button.container.component';
 import {ReqOpenedReportComponent} from '../report/req.opened.report.component';
+import {PieChartComponent} from '../report/pie.chart.component';
 
 
 @NgModule({
   imports: [BrowserModule, RouterModule, CustomerViewRoutes, ChartsModule],
   exports: [],
-  declarations: [CustomerViewComponent, Grid, CardComponent, OrderContainerComponent, SearchBarComponent, CircleReportComponent, BarChartComponent, EventReportComponent, ButtonContainerComponent, ReqOpenedReportComponent],
+  declarations: [CustomerViewComponent, Grid, CardComponent, OrderContainerComponent, SearchBarComponent, CircleReportComponent,
+                 BarChartComponent, EventReportComponent, ButtonContainerComponent, ReqOpenedReportComponent, PieChartComponent],
   providers: [CustomerViewService],
   schemas: [NO_ERRORS_SCHEMA]
 })
