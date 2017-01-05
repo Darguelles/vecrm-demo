@@ -11,22 +11,31 @@
     height: 23em;
     text-align: center;
   }
+
+  .legend-label{
+    margin-top: 2em;
+    color: darkgray;
+  }
+
 </style>
 
 <div class="container-circle-report">
   <h4>SERVICE REQUEST</h4>
   <h6 style="color: darkgrey">Updated date xxxxx</h6>
+  <br/>
   <div>
-    <canvas baseChart
+    <canvas baseChart id="bar"
             [datasets]="barChartData"
             [labels]="barChartLabels"
             [options]="barChartOptions"
             [legend]="barChartLegend"
+            [backgroundColor]="backgroundColor"
+            [colors]="backgroundColor"
             [chartType]="barChartType"
             [maintainAspectRatio]="maintainAspectRatio"
             [fullWidth]="fullWidth"
             (chartHover)="chartHovered($event)"
             (chartClick)="chartClicked($event)"></canvas>
   </div>
-  <!--<button (click)="randomize()">Update</button>-->
+  <label class="legend-label">Total alarms: 15690</label>
 </div>

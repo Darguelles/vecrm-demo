@@ -9,23 +9,19 @@ let template = require('./bar.chart.component.html');
 })
 export class BarChartComponent {
 
+
   public barChartOptions:any = {
-    hover: {
-      // Overrides the global setting
-      mode: 'index'
-    },
-    tooltips: {
-      enabled: false
-    },
     scaleStepWidth: 30,
     scaleShowVerticalLines: false,
+
     responsive: true,
+    showTooltips : true,
     scales: {
       yAxes: [{
         barThickness: 40,
         position: 'right',
         gridLines: {
-          display: false,
+          display: true,
           color: "#fff",
           zeroLineColor: "#fff",
           zeroLineWidth: 0
@@ -41,9 +37,9 @@ export class BarChartComponent {
         categoryPercentage: 1.0
       }],
       xAxes: [{
-        position: 'left',
+        // position: 'left',
         display: true,
-        categoryPercentage: 0.9
+        categoryPercentage: 0.5
       }]
     }
   };
@@ -52,22 +48,30 @@ export class BarChartComponent {
   public barChartLegend:boolean = false;
   public maintainAspectRatio:boolean = true;
   public fullWidth:boolean = true;
+  public backgroundColor:string = 'linear-gradient(to right, red , yellow)';
 
   public barChartData:any[] = [
     {
-      data: [10, 8, 6, 4, 2],
-      label: 'Series A',
-      fillColor: 'rgba(54, 162, 235, 0.2)',
-      backgroundColor: "#ff6c23",
-      borderColor: [
-        'blue',
-        'rgba(54, 162, 235, 1)',
-        'rgba(255, 206, 86, 1)'
+      data: [5000, 4500, 1000, 230, 120],
+      // label: 'Series A',
+      radialGradient: { cx: 0.5, cy: 0.3, r: 0.7 },
+      backgroundColor: [
+        '#a71313',
+        '#a71313',
+        '#a71313',
+        '#a71313',
+        '#a71313',
       ],
+      hoverBackgroundColor: [
+        '#B91313',
+        '#B91313',
+        '#B91313',
+        '#B91313',
+        '#B91313',
+      ],
+
       borderWidth: 1,
-      // scaleSteps: 10,
       scaleStepWidth: 20,
-      // borderWidth: 1,
       }
   ];
 
