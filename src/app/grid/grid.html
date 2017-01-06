@@ -1,11 +1,11 @@
 <table class="table table-striped">
-    <thead class="thead-inverse">
+    <thead style="background-color: #3a3a3a">
         <tr>
-            <td *ngFor="let col of columns"><a (click)="sort(col.name)">{{col.descr}}</a></td>
+          <td *ngFor="let col of columns" style="text-align: center" ><a (click)="sort(col.name)"><b style="color: white">{{col.descr}}</b></a></td>
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let row of rows">
+        <tr *ngFor="let row of rows" class="{{row.class}}"  >
             <td *ngFor="let col of columns">{{row[col.name]}}</td>
         </tr>
     </tbody>

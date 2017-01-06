@@ -79,7 +79,8 @@ export class CustomerViewComponent {
         category: 'High Voltage',
         createdBy: 'Bryan Barbour',
         assignedTo: 'dale.barbour@verizon.com',
-        status: 'completed'
+        status: 'completed',
+        class: 'table-success'
       },
       {
         caseId: '2014080912366',
@@ -88,7 +89,8 @@ export class CustomerViewComponent {
         category: 'High Voltage',
         createdBy: 'Bryan Barbour',
         assignedTo: 'dale.barbour@verizon.com',
-        status: 'completed'
+        status: 'completed',
+        class: 'table-success'
       },
       {
         caseId: '2014080912366',
@@ -97,7 +99,8 @@ export class CustomerViewComponent {
         category: 'Other',
         createdBy: 'Balaji Anarhachari',
         assignedTo: 'balaji.x.anachari@verizon.com',
-        status: 'New'
+        status: 'New',
+        class:'table-danger'
       },
       {
         caseId: '2014080912366',
@@ -106,7 +109,8 @@ export class CustomerViewComponent {
         category: 'Calling Campaign',
         createdBy: 'Manuel Francia',
         assignedTo: 'mfrancia@verizon.com',
-        status: 'New'
+        status: 'New',
+        class:'table-warning'
       },
     ];
   }
@@ -211,6 +215,42 @@ export class CustomerViewComponent {
         attachDocument: '',
         attachReceiver: ''
       },
+      {
+        company: 'Company XYZ',
+        userName: 'Mary Jones',
+        imageUri: 'http://images.clipartpanda.com/user-clipart-matt-icons_preferences-desktop-personal.png',
+        message: 'Spoke to VP Johnson, he wants more details on our Managed Pip offering. Who can help me with this?' ,
+        time: 'Yesterday at 4:07 PM',
+        attachDocument: '',
+        attachReceiver: ''
+      },
+      {
+        company: 'Company XYZ',
+        userName: 'Michael Brown',
+        imageUri: 'http://images.clipartpanda.com/user-clipart-matt-icons_preferences-desktop-personal.png',
+        message: 'I have heard the Company XYZ is about to close the purchase of Company J, wich has tree offices in Richmond VA. Anyone heard a definite date for completion the purchase?',
+        time: 'Today at 11:44 AM',
+        attachDocument: '',
+        attachReceiver: ''
+      },
+      {
+        company: 'Company XYZ',
+        userName: 'Mary Jones',
+        imageUri: 'http://images.clipartpanda.com/user-clipart-matt-icons_preferences-desktop-personal.png',
+        message: 'Spoke to VP Johnson, he wants more details on our Managed Pip offering. Who can help me with this?' ,
+        time: 'Yesterday at 4:07 PM',
+        attachDocument: '',
+        attachReceiver: ''
+      },
+      {
+        company: 'Company XYZ',
+        userName: 'Michael Brown',
+        imageUri: 'http://images.clipartpanda.com/user-clipart-matt-icons_preferences-desktop-personal.png',
+        message: 'I have heard the Company XYZ is about to close the purchase of Company J, wich has tree offices in Richmond VA. Anyone heard a definite date for completion the purchase?',
+        time: 'Today at 11:44 AM',
+        attachDocument: '',
+        attachReceiver: ''
+      },
     ]
   }
 
@@ -223,6 +263,7 @@ interface Case {
   createdBy: string;
   assignedTo: string;
   status: string;
+  class: string;
 }
 
 interface Order {
