@@ -12,7 +12,14 @@ export class CustomerViewComponent {
   caseColumns: Array<Column>;
   orders: Array<Order>;
   orderColumns: Array<Column>;
-  messages:Array<User>;
+  messages: Array<User>;
+
+  // Report
+  serviceRequestData: number[];
+  serviceRequestColours: string[];
+  changeRequestData: number[];
+  changeRequestColours: string[];
+
 
   constructor() {
 
@@ -21,6 +28,46 @@ export class CustomerViewComponent {
     this.orders = this.getOrders();
     this.orderColumns = this.getOrderColumns();
     this.messages = this.getUserMessages();
+    this.serviceRequestData = this.getServiceRequestData();
+    this.serviceRequestColours = this.getServiceRequestColours();
+    this.changeRequestData = this.getChangeRequestData();
+    this.changeRequestColours = this.getChangeRequestColours();
+  }
+
+  getServiceRequestData(): Array<number> {
+    return [60, 70, 80, 100, 200, 250, 300, 541, 150]
+  }
+
+  getServiceRequestColours(): Array<string> {
+    return [
+      '#ff672b',
+      '#ef6833',
+      '#dd6a3d',
+      '#d56d45',
+      '#d97d59',
+      '#c67a5d',
+      '#dd9073',
+      '#eda386',
+      '#f3b8a1',
+    ]
+  }
+
+  getChangeRequestData(): Array<number> {
+    return [54, 26, 12, 8]
+  }
+
+  getChangeRequestColours(): Array<string> {
+    return [
+      '#2b1ab4',
+      '#2f32d4',
+      '#2d27eb',
+      '#3348eb',
+      '#4961e2',
+      '#357de2',
+      '#3694ff',
+      '#39c9ff',
+      '#0ce1ff',
+    ]
   }
 
   getCases(): Array<Case> {
@@ -129,40 +176,40 @@ export class CustomerViewComponent {
   getUserMessages(): Array<User> {
     return [
       {
-        company: 'AT&T',
-        userName: 'Fosbery Guy',
+        company: 'Company XYZ',
+        userName: 'Michael Brown',
         imageUri: 'http://images.clipartpanda.com/user-clipart-matt-icons_preferences-desktop-personal.png',
-        message: 'Hi everyone!!! Have a nice day.',
+        message: 'I have heard the Company XYZ is about to close the purchase of Company J, wich has tree offices in Richmond VA. Anyone heard a definite date for completion the purchase?',
+        time: 'Today at 11:44 AM',
+        attachDocument: '',
+        attachReceiver: ''
       },
       {
-        company: 'Verizon',
-        userName: 'Lowell McAdam',
+        company: 'Company XYZ',
+        userName: 'Luisa Martinez',
         imageUri: 'http://images.clipartpanda.com/user-clipart-matt-icons_preferences-desktop-personal.png',
-        message: 'Very good team!! Now go to the work.',
+        message: 'I have uploaded a file showing XYZs new sales organization structure in their CA region. Anyone have an up to date one for TX? FYI' ,
+        time: 'Yesterday at 6:32 PM',
+        attachDocument: 'SO-Structure.docx (104 KB)',
+        attachReceiver: '@Scott Smith'
       },
       {
-        company: 'Verizon',
-        userName: 'Erikson Murrugarra',
+        company: 'Company XYZ',
+        userName: 'Mary Jones',
         imageUri: 'http://images.clipartpanda.com/user-clipart-matt-icons_preferences-desktop-personal.png',
-        message: 'I dont wanna light the grill Y.Y',
+        message: 'Spoke to VP Johnson, he wants more details on our Managed Pip offering. Who can help me with this?' ,
+        time: 'Yesterday at 4:07 PM',
+        attachDocument: '',
+        attachReceiver: ''
       },
       {
-        company: 'AT&T',
-        userName: 'Fosbery Guy',
+        company: 'Company XYZ',
+        userName: 'Michael Brown',
         imageUri: 'http://images.clipartpanda.com/user-clipart-matt-icons_preferences-desktop-personal.png',
-        message: 'Hi everyone!!! Have a nice day.',
-      },
-      {
-        company: 'Verizon',
-        userName: 'Lowell McAdam',
-        imageUri: 'http://images.clipartpanda.com/user-clipart-matt-icons_preferences-desktop-personal.png',
-        message: 'Very good team!! Now go to the work.',
-      },
-      {
-        company: 'Verizon',
-        userName: 'Erikson Murrugarra',
-        imageUri: 'http://images.clipartpanda.com/user-clipart-matt-icons_preferences-desktop-personal.png',
-        message: 'I dont wanna light the grill Y.Y',
+        message: 'I have heard the Company XYZ is about to close the purchase of Company J, wich has tree offices in Richmond VA. Anyone heard a definite date for completion the purchase?',
+        time: 'Today at 11:44 AM',
+        attachDocument: '',
+        attachReceiver: ''
       },
     ]
   }
@@ -192,4 +239,7 @@ interface User {
   userName: string;
   imageUri: string;
   message: string;
+  time: string;
+  attachDocument: string;
+  attachReceiver: string;
 }

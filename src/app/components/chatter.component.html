@@ -1,11 +1,25 @@
 <style>
-  .user-name{
+  .user-name {
     color: cornflowerblue;
   }
 
-  .company-name{
+  .company-name {
     color: cornflowerblue;
     font-weight: bold;
+  }
+
+  .info-label {
+    font-size: smaller;
+    color: darkgray;
+  }
+
+  .center-icon {
+    font-size: 20px;
+    margin-left: 1em;
+    text-align: center;
+    position:relative;
+    top: calc(50% - 10px);
+    color: #4d4d4d;
   }
 
 </style>
@@ -17,12 +31,44 @@
     <div class="list-group list-group-lg">
 
       <a *ngFor="let msg of messages" class="list-group-item" href="#">
-                                <span class="thumb-sm pull-xs-left mr">
+        <div class="row col-md-12">
+          <div class="col-md-1">
+            <span class="thumb-sm pull-xs-left mr">
                                     <img class="img-circle" src="{{msg.imageUri}}" alt="...">
                                     <i class="status status-bottom bg-success"></i>
                                 </span>
-        <h6 class="no-margin company-name">{{msg.company}} - <label class="user-name">{{msg.userName}}</label></h6>
-        <p class="help-block text-ellipsis no-margin">{{msg.message}}</p>
+          </div>
+          <div class="col-md-10">
+            <h6 class="no-margin company-name">{{msg.company}} - <label class="user-name">{{msg.userName}}</label></h6>
+            <p>{{msg.message}}</p>
+            <div [hidden]="!msg.attachDocument">
+              <label class="info-label">{{msg.attachReceiver}}</label>
+              <div style="background-color: #f5f5f5; padding-left: 1em; vertical-align: middle; width: 70%" class="row">
+                <div>
+                <label>
+                  <span class="thumb-sm pull-xs-left mr">
+                                    <img
+                                      src="https://cdn2.iconfinder.com/data/icons/picons-essentials/57/attachment-512.png"
+                                      alt="...">
+
+                  </span>
+                  <a><b style="font-size: x-large;">{{msg.attachDocument}}</b></a>
+
+                </label>
+                </div>
+                <div class="col-md-3">
+                  <span class="glyphicon glyphicon-option-horizontal pull-right center-icon"></span>
+                  &nbsp;
+                  <span class="glyphicon glyphicon-save pull-right center-icon"></span>
+                </div>
+              </div>
+            </div>
+            <label><a><i class="fa fa-comment-o"></i> Comment </a>&nbsp;</label>
+            <label><a><i class="glyphicon glyphicon-thumbs-up"></i> Like </a>&nbsp;</label>
+            <label class="info-label">{{msg.time}}</label>
+
+          </div>
+        </div>
       </a>
 
     </div>

@@ -16,13 +16,14 @@ import {ButtonContainerComponent} from '../components/button.container.component
 import {ReqOpenedReportComponent} from '../report/req.opened.report.component';
 import {PieChartComponent} from '../report/pie.chart.component';
 import {ChatterComponent} from '../components/chatter.component';
+import {PieChart2Component} from '../report/pie.chart2.component';
 
 
 @NgModule({
   imports: [BrowserModule, RouterModule, CustomerViewRoutes, ChartsModule],
   exports: [],
   declarations: [CustomerViewComponent, Grid, CardComponent, OrderContainerComponent, SearchBarComponent, CircleReportComponent,
-    BarChartComponent, EventReportComponent, ButtonContainerComponent, ReqOpenedReportComponent, PieChartComponent, ChatterComponent],
+    BarChartComponent, EventReportComponent, ButtonContainerComponent, ReqOpenedReportComponent, PieChartComponent, ChatterComponent, PieChart2Component],
   providers: [CustomerViewService],
   schemas: [NO_ERRORS_SCHEMA]
 })

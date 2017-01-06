@@ -247,8 +247,8 @@
 
         <req-opened-report days="7" date="Mar. 20 11:00 GMT" criticalRequest='2343' expirationRequest="1229"
                            totalRequest="189" class="col-md-4"></req-opened-report>
-        <pie-chart title="SERVICE REQUESTS" date='Mar. 20 11:00 GMT' total="189" class="col-md-4"></pie-chart>
-        <pie-chart title="CHANGE REQUESTS" date='Mar. 20 11:00 GMT' total="189" class="col-md-4"></pie-chart>
+        <pie-chart title="SERVICE REQUESTS" date='Mar. 20 11:00 GMT' total="189" class="col-md-4" [data]="serviceRequestData" ></pie-chart>
+        <pie-chart2 title="CHANGE REQUESTS" date='Mar. 20 11:00 GMT' total="189" class="col-md-4" [data]="changeRequestData"></pie-chart2>
 
 
       </div>
