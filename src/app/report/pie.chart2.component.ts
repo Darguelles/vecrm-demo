@@ -1,44 +1,31 @@
 import {Component, Input, AfterViewInit} from '@angular/core';
 
 // webpack html imports
-let template = require('./pie.chart.component.html');
+let template = require('./pie.chart2.component.html');
 
 @Component({
-  selector: 'pie-chart',
+  selector: 'pie-chart2',
   template: template
 })
-export class PieChartComponent {
+export class PieChart2Component {
+
+
 
   @Input() title: string = '';
   @Input() date: string = '';
   @Input() total: number = 0;
-  @Input() public data: Array<any> = [300, 70, 80, 100, 200, 250, 60, 220, 150];
-  // @Input() public colourScale: Array<any> = [
-  //   '#2b1ab4',
-  //   '#2f32d4',
-  //   '#2d27eb',
-  //   '#3348eb',
-  //   '#4961e2',
-  //   '#357de2',
-  //   '#3694ff',
-  //   '#39c9ff',
-  //   '#0ce1ff',
-  // ];
-
-
+  @Input() public data: Array<any> = [54, 26, 8, 12];
   @Input() public colourScale: Array<any> = [
-    '#db5f29',
-    '#e36833',
-    '#ef7e3d',
-    '#e36833',
-    '#ef925a',
-    '#e6a261',
-    '#f3ae77',
-    '#ffca93',
-    '#ffdec4'
+    '#34588c',
+    '#94b4e7',
+    '#456bbc',
+    '#d5f3ff',
+    '#4961e2',
+    '#357de2',
+    '#3694ff',
+    '#39c9ff',
+    '#0ce1ff',
   ];
-
-
 
   @Input() labels: Array<any> = [];
 

@@ -6,4 +6,5 @@ import {Component, Input, Output} from '@angular/core';
 })
 export class CircleReportComponent {
 
+
 }
