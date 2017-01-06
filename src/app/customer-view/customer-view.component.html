@@ -55,9 +55,11 @@
         </tr>
         </thead>
       </table>
+      <div style="padding: 1em">
       <div class="widget-body no-padding">
         <grid [rows]="cases" [columns]="caseColumns"></grid>
       </div>
+        </div>
     </card-body>
 
     <card-footer style="text-align: right">
@@ -115,16 +117,27 @@
 
 
   <!--Orders CARD-->
-  <card header="Orders" class="col-lg-6">
+  <card header="Orders" class="col-lg-6" >
     <card-body class="card-block">
-      <div class="widget-body padding">
-        <button class="btn btn-info width-100 mb-xs" role="button">
-          0 - 180 Days
-        </button>
-        <button class="btn btn-gray width-100 mb-xs" role="button">
-          0 - 360 Days
-        </button>
-      </div>
+      <table class="table table-striped table-emails table-hover" id="folder-view">
+        <thead>
+        <tr>
+          <th colspan="2" id="folder-actions">
+            <button class="btn btn-info width-100 mb-xs" role="button">
+              0 - 180 Days
+            </button>
+            <button class="btn btn-gray width-100 mb-xs" role="button">
+              0 - 360 Days
+            </button>
+          </th>
+          <th>
+            <div class="input-group col-md-6">
+              <search-bar style="width: 100%"></search-bar>
+            </div>
+          </th>
+        </tr>
+        </thead>
+        </table>
       <div class="widget-body">
         <div class="row">
           <order-container colorNumber="ordernumbertext" class="col-md-4" title="Overide" number=247
@@ -136,30 +149,30 @@
         </div>
       </div>
       <br/>
-      <div class="widget-body padding">
-        Overdue By
-        <button class="btn btn-info width-100 mb-xs" role="button">
-          All
-        </button>
-        <button class="btn btn-gray width-100 mb-xs" role="button">
-          0 - 30 Days
-        </button>
-        <button class="btn btn-gray width-100 mb-xs" role="button">
-          30 - 60 Days
-        </button>
-        <button class="btn btn-gray width-100 mb-xs" role="button">
-          60 - 90 Days
-        </button>
-        <button class="btn btn-gray width-100 mb-xs" role="button">
-          90 - 180 Days
-        </button>
+      <div style="padding: 1em">
+        <b>Overdue By</b>
+        <!--<br/>-->
+        <div class="btn-toolbar" role="toolbar">
+          <div class="btn-group">
+            <button type="button" class="btn btn-secondary">0 - 30 Days</button>
+            <button type="button" class="btn btn-secondary">30 - 60 Days</button>
+            <button type="button" class="btn btn-secondary">60 - 90 Days</button>
+            <button type="button" class="btn btn-secondary">90 - 180 Days</button>
+          </div>
+        </div>
+        <div class="widget-body padding">
+          <grid [rows]="orders" [columns]="orderColumns"></grid>
+        </div>
       </div>
-      <div class="widget-body padding">
-        <grid [rows]="orders" [columns]="orderColumns"></grid>
-      </div>
-
 
     </card-body>
+
+    <card-footer style="text-align: right">
+      <div class="text-right">
+        <button class="btn btn-view">&nbsp;&nbsp;View Latest Orders&nbsp;&nbsp;</button>
+        <button class="btn btn-create-order">&nbsp;&nbsp;Create Order&nbsp;&nbsp;</button>
+      </div>
+    </card-footer>
 
   </card>
 
@@ -208,7 +221,7 @@
 
   <card header="Chatter" class="col-lg-6">
     <card-body>
-      <chatter [messages]="messages" ></chatter>
+      <chatter [messages]="messages"></chatter>
     </card-body>
 
     <card-footer style="text-align: right">
@@ -232,7 +245,8 @@
         <button-container title="View All Alarms" class="col-md-4"></button-container>
         <button-container title="Schedule Events" class="col-md-4"></button-container>
 
-        <req-opened-report days="7" date="Mar. 20 11:00 GMT" criticalRequest='2343' expirationRequest="1229" totalRequest="189" class="col-md-4"></req-opened-report>
+        <req-opened-report days="7" date="Mar. 20 11:00 GMT" criticalRequest='2343' expirationRequest="1229"
+                           totalRequest="189" class="col-md-4"></req-opened-report>
         <pie-chart title="SERVICE REQUESTS" date='Mar. 20 11:00 GMT' total="189" class="col-md-4"></pie-chart>
         <pie-chart title="CHANGE REQUESTS" date='Mar. 20 11:00 GMT' total="189" class="col-md-4"></pie-chart>
 
@@ -246,8 +260,6 @@
     </card-footer>
 
   </card>
-
-
 
 
 </div>
