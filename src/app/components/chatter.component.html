@@ -15,13 +15,14 @@
   <h5>Recent chatter activity</h5>
   <div class="pre-scrollable">
     <div class="list-group list-group-lg">
-      <a class="list-group-item" href="#">
+
+      <a *ngFor="let msg of messages" class="list-group-item" href="#">
                                 <span class="thumb-sm pull-xs-left mr">
-                                    <img class="img-circle" src="assets/img/people/a2.jpg" alt="...">
+                                    <img class="img-circle" src="{{msg.imageUri}}" alt="...">
                                     <i class="status status-bottom bg-success"></i>
                                 </span>
-        <h6 class="no-margin company-name">Avantica - <label class="user-name">Paolo Carrasco</label></h6>
-        <p class="help-block text-ellipsis no-margin">Hey! What's up? So many times since we</p>
+        <h6 class="no-margin company-name">{{msg.company}} - <label class="user-name">{{msg.userName}}</label></h6>
+        <p class="help-block text-ellipsis no-margin">{{msg.message}}</p>
       </a>
 
     </div>

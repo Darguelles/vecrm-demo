@@ -22,7 +22,7 @@ import {ChatterComponent} from '../components/chatter.component';
   imports: [BrowserModule, RouterModule, CustomerViewRoutes, ChartsModule],
   exports: [],
   declarations: [CustomerViewComponent, Grid, CardComponent, OrderContainerComponent, SearchBarComponent, CircleReportComponent,
-                 BarChartComponent, EventReportComponent, ButtonContainerComponent, ReqOpenedReportComponent, PieChartComponent, ChatterComponent],
+    BarChartComponent, EventReportComponent, ButtonContainerComponent, ReqOpenedReportComponent, PieChartComponent, ChatterComponent],
   providers: [CustomerViewService],
   schemas: [NO_ERRORS_SCHEMA]
 })

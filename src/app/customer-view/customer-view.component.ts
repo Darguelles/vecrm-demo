@@ -12,6 +12,7 @@ export class CustomerViewComponent {
   caseColumns: Array<Column>;
   orders: Array<Order>;
   orderColumns: Array<Column>;
+  messages:Array<User>;
 
   constructor() {
 
@@ -19,6 +20,7 @@ export class CustomerViewComponent {
     this.caseColumns = this.getCaseColumns();
     this.orders = this.getOrders();
     this.orderColumns = this.getOrderColumns();
+    this.messages = this.getUserMessages();
   }
 
   getCases(): Array<Case> {
@@ -124,6 +126,47 @@ export class CustomerViewComponent {
     ];
   }
 
+  getUserMessages(): Array<User> {
+    return [
+      {
+        company: 'AT&T',
+        userName: 'Fosbery Guy',
+        imageUri: 'http://images.clipartpanda.com/user-clipart-matt-icons_preferences-desktop-personal.png',
+        message: 'Hi everyone!!! Have a nice day.',
+      },
+      {
+        company: 'Verizon',
+        userName: 'Lowell McAdam',
+        imageUri: 'http://images.clipartpanda.com/user-clipart-matt-icons_preferences-desktop-personal.png',
+        message: 'Very good team!! Now go to the work.',
+      },
+      {
+        company: 'Verizon',
+        userName: 'Erikson Murrugarra',
+        imageUri: 'http://images.clipartpanda.com/user-clipart-matt-icons_preferences-desktop-personal.png',
+        message: 'I dont wanna light the grill Y.Y',
+      },
+      {
+        company: 'AT&T',
+        userName: 'Fosbery Guy',
+        imageUri: 'http://images.clipartpanda.com/user-clipart-matt-icons_preferences-desktop-personal.png',
+        message: 'Hi everyone!!! Have a nice day.',
+      },
+      {
+        company: 'Verizon',
+        userName: 'Lowell McAdam',
+        imageUri: 'http://images.clipartpanda.com/user-clipart-matt-icons_preferences-desktop-personal.png',
+        message: 'Very good team!! Now go to the work.',
+      },
+      {
+        company: 'Verizon',
+        userName: 'Erikson Murrugarra',
+        imageUri: 'http://images.clipartpanda.com/user-clipart-matt-icons_preferences-desktop-personal.png',
+        message: 'I dont wanna light the grill Y.Y',
+      },
+    ]
+  }
+
 }
 interface Case {
   caseId: string;
@@ -145,5 +188,8 @@ interface Order {
 }
 
 interface User {
-
+  company: string;
+  userName: string;
+  imageUri: string;
+  message: string;
 }
