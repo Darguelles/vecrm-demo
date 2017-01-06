@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import {forEach} from "@angular/router/src/utils/collection";
 
 // webpack html imports
@@ -9,9 +9,13 @@ let template = require('./pie.chart.component.html');
   template: template
 })
 export class PieChartComponent {
-  // Pie
-  // public pieChartLabels:string[] = ['Download Sales', 'In-Store Sales', 'Mail Sales'];
-  // public pieChartData:number[] = [60, 70, 80, 100, 200, 250, 300, 541, 150];
+
+  @Input() title:string = '';
+  @Input() date:string = '';
+  @Input() total:number = 0;
+  @Input() data:number[] = [60, 70, 80, 100, 200, 250, 300, 541, 150];
+
+
   public pieChartType:string = 'pie';
   public pieChartLegend:boolean = false;
   // public backgroundColor:string = 'linear-gradient(to right, red , yellow)';
@@ -27,9 +31,8 @@ export class PieChartComponent {
 
   public pieChartData:any[] = [
     {
-      data: [60, 70, 80, 100, 200, 250, 300, 541, 150],
+      data: this.data,
       // label: 'Series A',
-      // radialGradient: { cx: 0.5, cy: 0.3, r: 0.7 },
       backgroundColor: [
         '#ff672b',
         '#ef6833',

@@ -17,8 +17,8 @@
 </style>
 
 <div class="container-circle-report">
-  <h4>SERVICE REQUESTS</h4>
-  <h6 style="color: darkgrey">Updated date xxxxx</h6>
+  <h4>{{title}}</h4>
+  <h6 style="color: darkgrey">Updated date {{date}}</h6>
   <br/>
 
   <div style="display: block">
@@ -32,6 +32,6 @@
             (chartClick)="chartClicked($event)"></canvas>
   </div>
 
-  <label class="legend-label">Total Service & Change Requests: 2300</label>
+  <label class="legend-label">Total Service & Change Requests: {{total}}</label>
 
 </div>

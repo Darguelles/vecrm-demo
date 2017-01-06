@@ -24,14 +24,14 @@
 </style>
 
 <div class="container-circle-report">
-  <h4>REQUESTS OPENED IN LAST 7 DAYS</h4>
-  <h6 style="color: darkgrey">Updated date xxxxx</h6>
+  <h4>REQUESTS OPENED IN LAST {{days}} DAYS</h4>
+  <h6 style="color: darkgrey">Updated date {{date}}</h6>
   <br/>
 
   <table width="100%">
     <tr>
       <td width="50%">
-        <label style="font-size: 50px;">2343</label>
+        <label style="font-size: 50px;">{{criticalRequest}}</label>
       </td>
       <td width="50%">
         <label style="font-size: small;
@@ -45,15 +45,15 @@
   <table width="100%">
     <tr>
       <td width="50%" style="text-align: right">
-        <label style="font-size: 35px; margin-right: 10px;">1229</label>
+        <label style="font-size: 35px; margin-right: 10px;">{{expirationRequest}}</label>
       </td>
       <td width="50%">
         <label style="font-size: small;
-    text-align: left;"><b>of 2343 </b> near to expiration</label>
+    text-align: left;"><b>of {{criticalRequest}} </b> near to expiration</label>
       </td>
     </tr>
   </table>
 
-  <label class="legend-label">Total Service & Change Requests: 2300</label>
+  <label class="legend-label">Total Service & Change Requests: {{totalRequest}}</label>
 
 </div>

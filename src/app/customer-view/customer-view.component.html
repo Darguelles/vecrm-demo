@@ -206,22 +206,19 @@
     </card>
   </div>
 
-  <card header="Chatter" class=" widget-container col-lg-6">
+  <card header="Chatter" class="col-lg-6">
     <card-body>
-      <div class="row">
-        <order-container colorNumber="salestnumbertext" class="col-md-6" title="Lead Referrals" number=0
-                         imagesource=""></order-container>
-        <order-container colorNumber="salestnumbertext" class="col-md-6" title="Opportunities" number=499
-                         imagesource=""></order-container>
-      </div>
+      <chatter></chatter>
     </card-body>
+
     <card-footer style="text-align: right">
       <div class="text-right">
-        <button class="btn btn-submit-project">Submit a GOLD Lead</button>
+        <!--<input type="search" class="form-control form-control-sm" placeholder="Search">-->
+        <button class="btn btn-view">View All Activity</button>
       </div>
     </card-footer>
-
   </card>
+
 
   <card header="Service Management" class=" widget-container col-lg-6">
     <card-body>
@@ -235,11 +232,9 @@
         <button-container title="View All Alarms" class="col-md-4"></button-container>
         <button-container title="Schedule Events" class="col-md-4"></button-container>
 
-        <req-opened-report class="col-md-4"></req-opened-report>
-        <pie-chart class="col-md-4"></pie-chart>
-        <pie-chart class="col-md-4"></pie-chart>
-        <!--<req-opened-report class="col-md-4"></req-opened-report>-->
-        <!--<req-opened-report class="col-md-4"></req-opened-report>-->
+        <req-opened-report days="7" date="Mar. 20 11:00 GMT" criticalRequest='2343' expirationRequest="1229" totalRequest="189" class="col-md-4"></req-opened-report>
+        <pie-chart title="SERVICE REQUESTS" date='Mar. 20 11:00 GMT' total="189" class="col-md-4"></pie-chart>
+        <pie-chart title="CHANGE REQUESTS" date='Mar. 20 11:00 GMT' total="189" class="col-md-4"></pie-chart>
 
 
       </div>
@@ -251,6 +246,8 @@
     </card-footer>
 
   </card>
+
+
 
 
 </div>
