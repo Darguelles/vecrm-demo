@@ -25,6 +25,7 @@ import { HomeComponent } from './home';
 import { AboutComponent } from './about';
 import { NoContentComponent } from './no-content';
 import { XLarge } from './home/x-large';
+import {WatchListViewModule} from "./watchlist/watchlist-view.module";
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -60,6 +61,7 @@ type StoreType = {
     DashboardModule,
     DMSModule,
     CustomerViewModule,
+    WatchListViewModule,
     RouterModule.forRoot(ROUTES, { useHash: true })
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
