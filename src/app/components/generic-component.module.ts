@@ -1,12 +1,18 @@
-import {NgModule} from "@angular/core";
+import {NgModule, NO_ERRORS_SCHEMA} from '@angular/core';
+import {BrowserModule}  from '@angular/platform-browser';
 import {CardComponent} from "./card.component";
+import {OrderContainerComponent} from "./order.container.component";
+import {SearchBarComponent} from "./search.bar.component";
+import {ButtonContainerComponent} from "./button.container.component";
+import {CommonModule}        from '@angular/common';
+import {Grid} from "../grid/grid";
 
 @NgModule({
-  imports: [],
-  exports: [],
-  declarations: [CardComponent],
+  imports: [CommonModule],
+  declarations: [CardComponent, OrderContainerComponent, SearchBarComponent,ButtonContainerComponent, Grid],
+  exports: [CardComponent, OrderContainerComponent, SearchBarComponent,ButtonContainerComponent, Grid],
   providers: [],
-  schemas: []
+  schemas: [NO_ERRORS_SCHEMA]
 })
 export class GenericComponentModule {
 
