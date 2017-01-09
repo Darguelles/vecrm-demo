@@ -1,30 +1,27 @@
-import { NgModule, ApplicationRef } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
-import { RouterModule } from '@angular/router';
-import { removeNgStyles, createNewHosts, createInputTransfer } from '@angularclass/hmr';
+import {NgModule, ApplicationRef, NO_ERRORS_SCHEMA} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {FormsModule} from '@angular/forms';
+import {HttpModule} from '@angular/http';
+import {RouterModule} from '@angular/router';
+import {removeNgStyles, createNewHosts, createInputTransfer} from '@angularclass/hmr';
 
-import { LayoutModule } from './layout/layout.module';
-import { LayoutFreeModule } from './layout-free/layout-free.module';
-import { DashboardModule } from './dashboard/dashboard.module';
-import { DMSModule } from './dms/dms.module';
-import { CustomerViewModule } from './customer-view/customer-view.module';
+import {LayoutModule} from './layout/layout.module';
+import {LayoutFreeModule} from './layout-free/layout-free.module';
+import {DashboardModule} from './dashboard/dashboard.module';
+import {DMSModule} from './dms/dms.module';
+import {CustomerViewModule} from './customer-view/customer-view.module';
 
 /*
  * Platform and Environment providers/directives/pipes
  */
-import { ENV_PROVIDERS } from './environment';
-import { ROUTES } from './app.routes';
+import {ENV_PROVIDERS} from './environment';
+import {ROUTES} from './app.routes';
 // App is our top level component
-import { AppComponent } from './app.component';
-import { APP_RESOLVER_PROVIDERS } from './app.resolver';
-import { AppState, InternalStateType } from './app.service';
-import { AppConfig } from './app.config';
-import { HomeComponent } from './home';
-import { AboutComponent } from './about';
-import { NoContentComponent } from './no-content';
-import { XLarge } from './home/x-large';
+import {AppComponent} from './app.component';
+import {APP_RESOLVER_PROVIDERS} from './app.resolver';
+import {AppState, InternalStateType} from './app.service';
+import {AppConfig} from './app.config';
+import {HomeComponent} from './home';
 import {WatchListViewModule} from "./watchlist/watchlist-view.module";
 
 // Application wide providers
@@ -44,11 +41,13 @@ type StoreType = {
  * `AppModule` is the main entry point into Angular2's bootstraping process
  */
 @NgModule({
-  bootstrap: [ AppComponent ],
+  bootstrap: [AppComponent],
   declarations: [
     AppComponent,
     // AboutComponent,
-    HomeComponent
+    HomeComponent,
+    // CardComponent,
+
     // NoContentComponent,
     // XLarge
   ],
@@ -62,15 +61,17 @@ type StoreType = {
     DMSModule,
     CustomerViewModule,
     WatchListViewModule,
-    RouterModule.forRoot(ROUTES, { useHash: true })
+    RouterModule.forRoot(ROUTES, {useHash: true})
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,
     APP_PROVIDERS
-  ]
+  ],
+  schemas: [NO_ERRORS_SCHEMA]
 })
 export class AppModule {
-  constructor(public appRef: ApplicationRef, public appState: AppState) {}
+  constructor(public appRef: ApplicationRef, public appState: AppState) {
+  }
 
   hmrOnInit(store: StoreType) {
     if (!store || !store.state) return;
@@ -96,7 +97,7 @@ export class AppModule {
     // recreate root elements
     store.disposeOldHosts = createNewHosts(cmpLocation);
     // save input values
-    store.restoreInputValues  = createInputTransfer();
+    store.restoreInputValues = createInputTransfer();
     // remove styles
     removeNgStyles();
   }
