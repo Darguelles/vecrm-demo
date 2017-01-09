@@ -1,8 +1,65 @@
+<style>
+
+  .section-title{
+    font-size: smaller;
+    color: grey;
+  }
+
+  .number-section-format{
+    font-size: x-large;
+    font-weight: 600;
+    color: crimson;
+  }
+</style>
+
 <div class="row">
 
   <card header="Gold Campaigns" class="col-md-4">
     <card-body>
       <action-bar></action-bar>
+      <div style="padding: 0.5em">
+        <grid [rows]="campaigns" [columns]="campaignColumns"></grid>
+        <div class="row">
+          <br/>
+          <div class="col-md-4 row" style="border-right: solid">
+            <div style="width: 25%">
+              <img class="x-icon sprite-icon-background insidepanel-icon x-icon-default">
+            </div>
+            <div>
+              <label class="section-title">Total calls</label>
+              <br/>
+              <label class="number-section-format">124</label>
+            </div>
+          </div>
+          <div class="col-md-4 row" style="border-right: solid">
+            <div style="width: 25%">
+              <img class="x-icon sprite-icon-background insidepanel-icon x-icon-default">
+            </div>
+            <div>
+              <label class="section-title">Total Leads</label>
+              <br/>
+              <label class="number-section-format">124</label>
+            </div>
+          </div>
+          <div class="col-md-4 row">
+            <div style="width: 25%">
+              <img class="x-icon sprite-icon-background insidepanel-icon x-icon-default">
+            </div>
+            <div>
+              <label class="section-title">Rate Convertion</label>
+              <br/>
+              <label class="number-section-format">124</label>
+            </div>
+          </div>
+        </div>
+        <div class="bg-gray-lighter m-t-2">
+          <progress class="progress progress-sm progress-primary" value="100" max="100" style="width: 30%;"></progress>
+        </div>
+        <br/>
+        <label class="section-title"><span class="glyphicon glyphicon-arrow-up"></span>8% Lower than last month</label>
+        <br/>
+        <label class="section-title"><span class="glyphicon glyphicon-arrow-up"></span>Doing better than 86% of the rest of coworkers</label>
+      </div>
     </card-body>
 
   </card>
