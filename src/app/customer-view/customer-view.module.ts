@@ -6,7 +6,6 @@ import {ChartsModule} from 'ng2-charts/ng2-charts';
 import {CustomerViewRoutes}   from './customer-view.routes';
 import {CustomerViewService}   from './services/customer-view.service';
 import {Grid}   from '../grid/grid';
-import {CardComponent} from '../components/card.component.ts'
 import {OrderContainerComponent} from '../components/order.container.component.ts'
 import {SearchBarComponent} from '../components/search.bar.component'
 import {CircleReportComponent} from '../report/circle.report.component'
@@ -21,10 +20,11 @@ import {GenericComponentModule} from "../components/generic-component.module";
 
 
 @NgModule({
-  imports: [BrowserModule, RouterModule, CustomerViewRoutes, ChartsModule, GenericComponentModule],
+  imports: [BrowserModule, RouterModule, CustomerViewRoutes, ChartsModule,
+    GenericComponentModule],
   exports: [],
-  declarations: [CustomerViewComponent, Grid, OrderContainerComponent, SearchBarComponent, CircleReportComponent,
-    BarChartComponent, EventReportComponent, ButtonContainerComponent, ReqOpenedReportComponent, PieChartComponent, ChatterComponent, PieChart2Component],
+  declarations: [CustomerViewComponent, CircleReportComponent,
+    BarChartComponent, EventReportComponent, ReqOpenedReportComponent, PieChartComponent, ChatterComponent, PieChart2Component],
   providers: [CustomerViewService],
   schemas: [NO_ERRORS_SCHEMA]
 })

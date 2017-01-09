@@ -2,7 +2,6 @@ import {NgModule, NO_ERRORS_SCHEMA} from "@angular/core";
 import {BrowserModule}  from '@angular/platform-browser';
 import {RouterModule}  from '@angular/router';
 import {ChartsModule} from 'ng2-charts/ng2-charts';
-import {CardComponent} from "../components/card.component";
 import {WatchListViewComponent} from "./watchlist-view.component";
 import {WatchlistViewRoutes} from "./watchlist-view.routes";
 import {WatchListService} from "./services/watchlist-service";
