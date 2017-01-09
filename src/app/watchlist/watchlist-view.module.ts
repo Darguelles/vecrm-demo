@@ -6,11 +6,12 @@ import {WatchListViewComponent} from "./watchlist-view.component";
 import {WatchlistViewRoutes} from "./watchlist-view.routes";
 import {WatchListService} from "./services/watchlist-service";
 import {GenericComponentModule} from "../components/generic-component.module";
+import {ActionBarComponent} from "../components/action-bar/action-bar.component";
 
 @NgModule({
   imports: [BrowserModule, RouterModule, WatchlistViewRoutes, ChartsModule, GenericComponentModule],
   exports: [],
-  declarations: [WatchListViewComponent],
+  declarations: [WatchListViewComponent, ActionBarComponent],
   providers: [WatchListService],
   schemas: [NO_ERRORS_SCHEMA]
 })
