@@ -1,3 +1,13 @@
-/**
- * Created by ARGUDI7 on 1/9/2017.
- */
+import {NgModule} from "@angular/core";
+import {CardComponent} from "./card.component";
+
+@NgModule({
+  imports: [],
+  exports: [],
+  declarations: [CardComponent],
+  providers: [],
+  schemas: []
+})
+export class GenericComponentModule {
+
+}
