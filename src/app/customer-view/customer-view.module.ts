@@ -17,12 +17,13 @@ import {ReqOpenedReportComponent} from '../report/req.opened.report.component';
 import {PieChartComponent} from '../report/pie.chart.component';
 import {ChatterComponent} from '../components/chatter.component';
 import {PieChart2Component} from '../report/pie.chart2.component';
+import {GenericComponentModule} from "../components/generic-component.module";
 
 
 @NgModule({
-  imports: [BrowserModule, RouterModule, CustomerViewRoutes, ChartsModule],
+  imports: [BrowserModule, RouterModule, CustomerViewRoutes, ChartsModule, GenericComponentModule],
   exports: [],
-  declarations: [CustomerViewComponent, Grid, CardComponent, OrderContainerComponent, SearchBarComponent, CircleReportComponent,
+  declarations: [CustomerViewComponent, Grid, OrderContainerComponent, SearchBarComponent, CircleReportComponent,
     BarChartComponent, EventReportComponent, ButtonContainerComponent, ReqOpenedReportComponent, PieChartComponent, ChatterComponent, PieChart2Component],
   providers: [CustomerViewService],
   schemas: [NO_ERRORS_SCHEMA]
