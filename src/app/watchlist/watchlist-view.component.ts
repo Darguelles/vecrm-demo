@@ -10,10 +10,14 @@ export class WatchListViewComponent {
 
   campaignColumns: Array<Column>;
   campaigns: Array<Campaign>;
+  surveyColumns: Array<Column>;
+  surveys: Array<Survey>;
 
   constructor() {
     this.campaignColumns = this.getCampaignColumns();
     this.campaigns = this.getCampaigns();
+    this.surveyColumns = this.getSurveyColumns();
+    this.surveys = this.getSurveys();
   }
 
 
@@ -26,6 +30,40 @@ export class WatchListViewComponent {
       new Column('pip', 'PIP'),
       new Column('cpe', 'CPE EOL')
     ];
+  }
+
+  getSurveyColumns(): Array<Column> {
+    return [
+      new Column('customer', 'CUSTOMER'),
+      new Column('relationship', 'RELATIONSHIP AGREGATE CLI'),
+      new Column('transactional', 'TRANSACTIONAL COUNT 0 SAT < 6')
+    ];
+  }
+
+  getSurveys(): Array<Survey> {
+    return [
+      {
+        customer: 'DPT EDUCATION',
+        relationship: 8.7,
+        transactional: 2
+      },{
+        customer: 'GENERAL ELECTRIC',
+        relationship: 0,
+        transactional: 0
+      },{
+        customer: 'HP',
+        relationship: 0,
+        transactional: 0
+      },{
+        customer: 'MORGAN STANLEY',
+        relationship: 9.3,
+        transactional: 20
+      },{
+        customer: 'PROCTOR & GAMBLE',
+        relationship: 9,
+        transactional: 3
+      },
+    ]
   }
 
   getCampaigns(): Array<Campaign> {
@@ -76,4 +114,10 @@ interface Campaign {
   diversity: number;
   pip: number;
   cpe: number;
+}
+
+interface Survey {
+  customer: string;
+  relationship: number;
+  transactional: number;
 }

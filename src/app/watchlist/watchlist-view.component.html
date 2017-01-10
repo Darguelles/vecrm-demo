@@ -56,9 +56,9 @@
           <progress class="progress progress-sm progress-primary" value="100" max="100" style="width: 30%;"></progress>
         </div>
         <br/>
-        <label class="section-title"><span class="glyphicon glyphicon-arrow-up"></span>8% Lower than last month</label>
+        <label class="section-title"><span class="glyphicon glyphicon-arrow-up"></span>&nbsp;8% Lower than last month</label>
         <br/>
-        <label class="section-title"><span class="glyphicon glyphicon-arrow-up"></span>Doing better than 86% of the rest of coworkers</label>
+        <label class="section-title"><span class="glyphicon glyphicon-certificate"></span>&nbsp;Doing better than 86% of the rest of coworkers</label>
       </div>
     </card-body>
 
@@ -73,6 +73,9 @@
   <card header="Survey" class="col-md-4">
     <card-body>
       <action-bar></action-bar>
+      <div style="padding: 0.5em">
+        <grid [rows]="surveys" [columns]="surveyColumns"></grid>
+      </div>
     </card-body>
   </card>
 
