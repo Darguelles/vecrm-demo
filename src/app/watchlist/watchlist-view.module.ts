@@ -7,9 +7,10 @@ import {WatchlistViewRoutes} from "./watchlist-view.routes";
 import {WatchListService} from "./services/watchlist-service";
 import {GenericComponentModule} from "../components/generic-component.module";
 import {ActionBarComponent} from "../components/action-bar/action-bar.component";
+import {MorrisChartModule} from "../report/morris-chart/morris.module";
 
 @NgModule({
-  imports: [BrowserModule, RouterModule, WatchlistViewRoutes, ChartsModule, GenericComponentModule],
+  imports: [BrowserModule, RouterModule, WatchlistViewRoutes, ChartsModule, GenericComponentModule, MorrisChartModule],
   exports: [],
   declarations: [WatchListViewComponent, ActionBarComponent],
   providers: [WatchListService],

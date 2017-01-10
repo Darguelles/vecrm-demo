@@ -32,6 +32,12 @@
     background-color: #046694;
   }
 
+  .sprite-billinginquiries {
+    background-position: 0 -1633px;
+    width: 40px;
+    height: 40px;
+  }
+
 </style>
 
 
@@ -94,13 +100,13 @@
           <div class="row">
             <!--TODO make this auto replicable from angular backend-->
             <order-container colorNumber="billingnumbertext" style="width:50%;" title="Unresolved Billing Inquiries"
-                             number=0 imagesource=""></order-container>
+                             number=0 imageSource='icon-billinginquiries'  id="image-1166" ></order-container>
             <order-container colorNumber="billingnumbertext" style="width:50%;"
-                             title="Denied inquiries Awaiting Closure" number=0 imagesource=""></order-container>
+                             title="Denied inquiries Awaiting Closure" number=0 imageSource="icon-deniedinquiries"></order-container>
             <order-container colorNumber="billingnumbertext" style="width:50%;"
-                             title="Approved Inquiries Awaiting Posting" number=0 imagesource=""></order-container>
+                             title="Approved Inquiries Awaiting Posting" number=0 imageSource="icon-approvedinquiries"></order-container>
             <order-container colorNumber="billingnumbertext" style="width:50%;" title="Inquiries Pending Approbal"
-                             number=0 imagesource=""></order-container>
+                             number=0 imageSource="icon-inquiriespending"></order-container>
           </div>
         </div>
         <div class="tab-pane" id="assumtion" role="tabpanel" aria-labelledby="assumtion-tab" aria-expanded="false">
@@ -145,11 +151,11 @@
       <div class="widget-body">
         <div class="row">
           <order-container colorNumber="ordernumbertext" class="col-md-4" title="Overide" number=247
-                           imagesource=""></order-container>
+                           imageSource="icon-overide"></order-container>
           <order-container colorNumber="ordernumbertext" class="col-md-4" title="Pending" number=454
-                           imagesource=""></order-container>
+                           imageSource="icon-pending"></order-container>
           <order-container colorNumber="ordernumbertext" class="col-md-4" title="Completed" number=87
-                           imagesource=""></order-container>
+                           imageSource="icon-complete"></order-container>
         </div>
       </div>
       <br/>
@@ -194,11 +200,11 @@
         </div>
         <div class="row">
           <order-container colorNumber="projectnumbertext" class="col-md-4" title="At Risk" number=0
-                           imagesource=""></order-container>
+                           imageSource="icon-atrisk"></order-container>
           <order-container colorNumber="projectnumbertext" class="col-md-4" title="On Track" number=0
-                           imagesource=""></order-container>
+                           imageSource="icon-ontrack"></order-container>
           <order-container colorNumber="projectnumbertext" class="col-md-4" title="Closed" number=0
-                           imagesource=""></order-container>
+                           imageSource="icon-closed"></order-container>
         </div>
       </card-body>
 
@@ -209,9 +215,9 @@
       <card-body>
         <div class="row">
           <order-container colorNumber="salestnumbertext" class="col-md-6" title="Lead Referrals" number=0
-                           imagesource=""></order-container>
+                           imageSource="icon-referrals"></order-container>
           <order-container colorNumber="salestnumbertext" class="col-md-6" title="Opportunities" number=499
-                           imagesource=""></order-container>
+                           imageSource="icon-opportunities"></order-container>
         </div>
       </card-body>
       <card-footer style="text-align: right">

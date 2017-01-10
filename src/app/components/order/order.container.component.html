@@ -30,19 +30,91 @@
     olor: cornflowerblue;
   }
 
-  .sprite-billinginquiries {
+  /*.sprite-icon-background,*/
+  /*.brchecked .x-form-radio {*/
+  /*background: transparent;*/
+  /*display: inline-block;*/
+  /*}*/
+
+  .sprite-icon-background,
+  .brchecked .x-form-radio {
+    background: transparent url(https://vecrmqa4.ebiz.verizon.com/vecrm/customer/resources/icon/vecrm-landingpageicons-sprite.png) no-repeat 0 0;
+    display: inline-block;
+  }
+
+  .icon-billinginquiries {
+    background-position: 0 -1721px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .icon-inquiriespending {
     background-position: 0 -1633px;
     width: 40px;
     height: 40px;
   }
 
-  .sprite-icon-background,
-  .brchecked .x-form-radio {
-    background: transparent;
-    display: inline-block;
+  .icon-deniedinquiries {
+    background-position: 0 -1544px;
+    width: 40px;
+    height: 40px;
   }
 
-  .order-image{
+  .icon-approvedinquiries {
+    background-position: 0 -1453px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .icon-overide {
+    background-position: -110px -1808px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .icon-pending {
+    background-position: -110px -237px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .icon-complete {
+    background-position: -110px -1722px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .icon-ontrack {
+    background-position: -345px -1460px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .icon-atrisk {
+    background-position: -348px -1382px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .icon-closed {
+    background-position: -237px -1384px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .icon-opportunities {
+    background-position: -283px -165px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .icon-referrals {
+    background-position: -283px -259px;
+    width: 40px;
+    height: 40px;
+  }
+
+  .order-image {
     margin-right: 0.5em
   }
 
@@ -83,9 +155,8 @@
     <div class="panel-body orders-container-box contenttext">
       <div class="row">
         <div class="order-image" style="width: 25%">
-          <img class="x-icon sprite-icon-background insidepanel-icon x-icon-default sprite-billinginquiries"
-               src="{{imageSource}}"
-               id="{{imageId}}">
+          <img class="x-icon sprite-icon-background insidepanel-icon x-icon-default {{imageSource}}" id="{{imageId}}">
+          <!--<img class="x-icon sprite-icon-background insidepanel-icon x-icon-default sprite-billinginquiries" id="image-1166">-->
         </div>
         <div style="width: 70%">
           {{title}}
