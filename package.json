@@ -75,6 +75,7 @@
     "bootstrap": "^3.3.7",
     "chart.js": "^2.4.0",
     "core-js": "^2.4.1",
+    "draggabilly": "^2.1.1",
     "http-server": "^0.9.0",
     "ie-shim": "^0.1.0",
     "jquery": "3.1.0",
@@ -82,6 +83,7 @@
     "morris.js": "^0.5.0",
     "ng-morris-js": "^0.3.4",
     "ng2-charts": "^1.4.4",
+    "packery": "^2.1.1",
     "rxjs": "5.0.0-beta.12",
     "zone.js": "~0.6.25"
   },
