@@ -45,7 +45,7 @@
 
   <!--Case Managment Activities DIV-->
   <card header="Case Managament Activities" class="col-lg-8">
-    <card-body class="card-block">
+    <card-body>
       <table class="table table-striped table-emails table-hover" id="folder-view">
         <thead>
         <tr>
@@ -81,7 +81,7 @@
 
   <!--Billing and Customer Inquiries CARD-->
   <card header="Billing and Customer Inquiries" class="col-lg-4">
-    <card-body class="card-block">
+    <card-body>
       <div class="clearfix">
         <ul class="nav nav-tabs pull-xs-left" id="myTab" role="tablist">
           <li class="nav-item">
@@ -94,9 +94,9 @@
           </li>
         </ul>
       </div>
-      <div class="tab-content mb-lg" id="myTabContent">
+      <div class="tab-content" id="myTabContent" style="margin-bottom: 0px;">
         <div role="tabpanel" class="tab-pane active in clearfix" id="basic" aria-labelledby="basic-tab"
-             aria-expanded="true">
+             aria-expanded="true" style="padding: inherit;" >
           <div class="row">
             <!--TODO make this auto replicable from angular backend-->
             <order-container colorNumber="billingnumbertext" style="width:50%;" title="Unresolved Billing Inquiries"
@@ -128,7 +128,7 @@
 
   <!--Orders CARD-->
   <card header="Orders" class="col-lg-6" >
-    <card-body class="card-block">
+    <card-body>
       <table class="table table-striped table-emails table-hover" id="folder-view">
         <thead>
         <tr>
