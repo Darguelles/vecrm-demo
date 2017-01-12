@@ -49,7 +49,8 @@ export class CustomerViewComponent implements AfterViewInit{
     imagesLoaded( grid, function() {
       pckry = new Packery( grid, {
         itemSelector: '.grid-item',
-        // columnWidth: '.grid-sizer',
+        columnWidth: '.grid-sizer',
+        // rowHeight: 100,
         percentPosition: true,
         // gutter: 5
       });
