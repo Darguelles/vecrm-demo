@@ -1,12 +1,16 @@
-import {Component} from '@angular/core';
+import {Component, AfterViewChecked, ElementRef} from '@angular/core';
 import {Column} from '../grid/Column';
+
+let Packery = require('packery');
+let Draggabilly = require('draggabilly');
+
 
 @Component({
   moduleId: module.id.toString(),
   selector: 'customer-view',
   templateUrl: 'customer-view.component.html',
 })
-export class CustomerViewComponent {
+export class CustomerViewComponent implements AfterViewChecked {
 
   cases: Array<Case>;
   caseColumns: Array<Column>;
@@ -21,8 +25,9 @@ export class CustomerViewComponent {
   changeRequestColours: string[];
 
 
-  constructor() {
+  constructor(public element: ElementRef) {
 
+    // this.pckry = this.pckry;
     this.cases = this.getCases();
     this.caseColumns = this.getCaseColumns();
     this.orders = this.getOrders();
@@ -32,6 +37,25 @@ export class CustomerViewComponent {
     this.serviceRequestColours = this.getServiceRequestColours();
     this.changeRequestData = this.getChangeRequestData();
     this.changeRequestColours = this.getChangeRequestColours();
+
+  }
+
+  ngAfterViewInit() {
+
+  }
+
+  ngAfterViewChecked() {
+    let pckry = new Packery('.grid', {
+      itemSelector: '.grid-item',
+      columnWidth: '.grid-sizer',
+      gutter: 20
+    });
+
+    pckry.getItemElements().forEach(function (itemElem) {
+      let draggie = new Draggabilly(itemElem);
+      pckry.bindDraggabillyEvents(draggie);
+    });
+
   }
 
   getServiceRequestData(): Array<number> {
@@ -100,7 +124,7 @@ export class CustomerViewComponent {
         createdBy: 'Balaji Anarhachari',
         assignedTo: 'balaji.x.anachari@verizon.com',
         status: 'New',
-        class:'table-danger'
+        class: 'table-danger'
       },
       {
         caseId: '2014080912366',
@@ -110,7 +134,7 @@ export class CustomerViewComponent {
         createdBy: 'Manuel Francia',
         assignedTo: 'mfrancia@verizon.com',
         status: 'New',
-        class:'table-warning'
+        class: 'table-warning'
       },
     ];
   }
@@ -192,7 +216,7 @@ export class CustomerViewComponent {
         company: 'Company XYZ',
         userName: 'Luisa Martinez',
         imageUri: 'http://images.clipartpanda.com/user-clipart-matt-icons_preferences-desktop-personal.png',
-        message: 'I have uploaded a file showing XYZs new sales organization structure in their CA region. Anyone have an up to date one for TX? FYI' ,
+        message: 'I have uploaded a file showing XYZs new sales organization structure in their CA region. Anyone have an up to date one for TX? FYI',
         time: 'Yesterday at 6:32 PM',
         attachDocument: 'SO-Structure.docx (104 KB)',
         attachReceiver: '@Scott Smith'
@@ -201,7 +225,7 @@ export class CustomerViewComponent {
         company: 'Company XYZ',
         userName: 'Mary Jones',
         imageUri: 'http://images.clipartpanda.com/user-clipart-matt-icons_preferences-desktop-personal.png',
-        message: 'Spoke to VP Johnson, he wants more details on our Managed Pip offering. Who can help me with this?' ,
+        message: 'Spoke to VP Johnson, he wants more details on our Managed Pip offering. Who can help me with this?',
         time: 'Yesterday at 4:07 PM',
         attachDocument: '',
         attachReceiver: ''
@@ -219,7 +243,7 @@ export class CustomerViewComponent {
         company: 'Company XYZ',
         userName: 'Mary Jones',
         imageUri: 'http://images.clipartpanda.com/user-clipart-matt-icons_preferences-desktop-personal.png',
-        message: 'Spoke to VP Johnson, he wants more details on our Managed Pip offering. Who can help me with this?' ,
+        message: 'Spoke to VP Johnson, he wants more details on our Managed Pip offering. Who can help me with this?',
         time: 'Yesterday at 4:07 PM',
         attachDocument: '',
         attachReceiver: ''
@@ -237,7 +261,7 @@ export class CustomerViewComponent {
         company: 'Company XYZ',
         userName: 'Mary Jones',
         imageUri: 'http://images.clipartpanda.com/user-clipart-matt-icons_preferences-desktop-personal.png',
-        message: 'Spoke to VP Johnson, he wants more details on our Managed Pip offering. Who can help me with this?' ,
+        message: 'Spoke to VP Johnson, he wants more details on our Managed Pip offering. Who can help me with this?',
         time: 'Yesterday at 4:07 PM',
         attachDocument: '',
         attachReceiver: ''
