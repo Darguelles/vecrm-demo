@@ -1,16 +1,17 @@
-import {Component, AfterViewChecked, ElementRef} from '@angular/core';
+import {Component, AfterViewChecked, ElementRef, AfterViewInit} from '@angular/core';
 import {Column} from '../grid/Column';
 
 let Packery = require('packery');
 let Draggabilly = require('draggabilly');
 
+declare var jQuery:any;
 
 @Component({
   moduleId: module.id.toString(),
   selector: 'customer-view',
   templateUrl: 'customer-view.component.html',
 })
-export class CustomerViewComponent implements AfterViewChecked {
+export class CustomerViewComponent implements AfterViewChecked, AfterViewInit {
 
   cases: Array<Case>;
   caseColumns: Array<Column>;
@@ -41,20 +42,29 @@ export class CustomerViewComponent implements AfterViewChecked {
   }
 
   ngAfterViewInit() {
-
-  }
-
-  ngAfterViewChecked() {
+    console.log('LOADING GRID')
     let pckry = new Packery('.grid', {
+      // itemSelector: '.grid-item',
+      // columnWidth: '.grid-sizer',
+      // gutter: 20
+      // itemSelector: '.grid-item',
+      // columnWidth: '.grid-sizer',
+      // percentPosition: true
+
       itemSelector: '.grid-item',
       columnWidth: '.grid-sizer',
-      gutter: 20
+      percentPosition: true
     });
+  }
 
-    pckry.getItemElements().forEach(function (itemElem) {
-      let draggie = new Draggabilly(itemElem);
-      pckry.bindDraggabillyEvents(draggie);
-    });
+
+  ngAfterViewChecked() {
+
+
+    // pckry.getItemElements().forEach(function (itemElem) {
+    //   let draggie = new Draggabilly(itemElem);
+    //   pckry.bindDraggabillyEvents(draggie);
+    // });
 
   }
 
