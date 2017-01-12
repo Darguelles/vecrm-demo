@@ -71,17 +71,21 @@
     height: 200px;
   }
 
+  .no-padding {
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+  }
+
 
 </style>
 
 
 <div class="container-fluid">
-  <!-- add extra container element for Masonry -->
+
   <div class="grid">
-    <div class="grid-sizer col-xs-12 col-sm-8 col-md-6"></div>
-    <!--<div >-->
-    <!-- add inner element for column content -->
-    <card header="Case Managament Activities" class="grid-item col-xs-6 col-sm-8 col-md-6 col-lg-8">
+
+    <!--CASE MANAGEMENT ACTIVITIES-->
+    <card header="Case Managament Activities" class="grid-item  col-lg-8"  style="margin-bottom: 1.5em">
       <card-body>
         <table class="table table-striped table-emails table-hover" id="folder-view">
           <thead>
@@ -115,11 +119,10 @@
         </div>
       </card-footer>
     </card>
-    <!--</div>-->
 
 
-    <!--<div >-->
-    <card header="Billing and Customer Inquiries" class="grid-item col-xs-6 col-sm-4 col-md-3 col-lg-4">
+    <!--BILLING & CUSTPMER IONQUIRIES-->
+    <card header="Billing and Customer Inquiries" class="grid-item col-lg-4"  style="margin-bottom: 1.5em">
       <card-body>
         <div class="clearfix">
           <ul class="nav nav-tabs pull-xs-left" id="myTab" role="tablist">
@@ -165,230 +168,161 @@
         </div>
       </card-footer>
     </card>
-    <!--</div>-->
-      <card header="Orders" class="grid-item col-xs-6 col-sm-4 col-md-3 col-lg-6">
-        <card-body>
-          <table class="table table-striped table-emails table-hover" id="folder-view">
-            <thead>
-            <tr>
-              <th colspan="2" id="folder-actions">
-                <button class="btn btn-info width-100 mb-xs" role="button">
-                  0 - 180 Days
-                </button>
-                <button class="btn btn-gray width-100 mb-xs" role="button">
-                  0 - 360 Days
-                </button>
-              </th>
-              <th>
-                <div class="input-group col-md-6">
-                  <search-bar style="width: 100%"></search-bar>
-                </div>
-              </th>
-            </tr>
-            </thead>
-          </table>
-          <div class="widget-body">
-            <div class="row">
-              <order-container colorNumber="ordernumbertext" class="col-md-4" title="Overide" number=247
-                               imageSource="icon-overide"></order-container>
-              <order-container colorNumber="ordernumbertext" class="col-md-4" title="Pending" number=454
-                               imageSource="icon-pending"></order-container>
-              <order-container colorNumber="ordernumbertext" class="col-md-4" title="Completed" number=87
-                               imageSource="icon-complete"></order-container>
-            </div>
-          </div>
-          <br/>
-          <div style="padding: 1em">
-            <b>Overdue By</b>
-            <!--<br/>-->
-            <div class="btn-toolbar" role="toolbar">
-              <div class="btn-group">
-                <button type="button" class="btn btn-secondary">0 - 30 Days</button>
-                <button type="button" class="btn btn-secondary">30 - 60 Days</button>
-                <button type="button" class="btn btn-secondary">60 - 90 Days</button>
-                <button type="button" class="btn btn-secondary">90 - 180 Days</button>
+
+
+    <!--ORDERS INFO-->
+    <card header="Orders" class="grid-item col-xs-6 col-sm-4 col-md-3 col-lg-6" style="margin-bottom: 1.5em">
+      <card-body>
+        <table class="table table-striped table-emails table-hover" id="folder-view">
+          <thead>
+          <tr>
+            <th colspan="2" id="folder-actions">
+              <button class="btn btn-info width-100 mb-xs" role="button">
+                0 - 180 Days
+              </button>
+              <button class="btn btn-gray width-100 mb-xs" role="button">
+                0 - 360 Days
+              </button>
+            </th>
+            <th>
+              <div class="input-group col-md-6">
+                <search-bar style="width: 100%"></search-bar>
               </div>
-            </div>
-            <div class="widget-body padding">
-              <grid [rows]="orders" [columns]="orderColumns"></grid>
+            </th>
+          </tr>
+          </thead>
+        </table>
+        <div class="widget-body">
+          <div class="row">
+            <order-container colorNumber="ordernumbertext" class="no-padding col-md-4" title="Overide" number=247
+                             imageSource="icon-overide"></order-container>
+            <order-container colorNumber="ordernumbertext" class="no-padding col-md-4" title="Pending" number=454
+                             imageSource="icon-pending"></order-container>
+            <order-container colorNumber="ordernumbertext" class="no-padding col-md-4" title="Completed" number=87
+                             imageSource="icon-complete"></order-container>
+          </div>
+        </div>
+        <br/>
+        <div style="padding: 1em">
+          <b>Overdue By</b>
+          <!--<br/>-->
+          <div class="btn-toolbar" role="toolbar">
+            <div class="btn-group">
+              <button type="button" class="btn btn-secondary">0 - 30 Days</button>
+              <button type="button" class="btn btn-secondary">30 - 60 Days</button>
+              <button type="button" class="btn btn-secondary">60 - 90 Days</button>
+              <button type="button" class="btn btn-secondary">90 - 180 Days</button>
             </div>
           </div>
-
-        </card-body>
-
-        <card-footer style="text-align: right">
-          <div class="text-right">
-            <button class="btn btn-view">&nbsp;&nbsp;View Latest Orders&nbsp;&nbsp;</button>
-            <button class="btn btn-create-order">&nbsp;&nbsp;Create Order&nbsp;&nbsp;</button>
+          <div class="widget-body padding">
+            <grid [rows]="orders" [columns]="orderColumns"></grid>
           </div>
-        </card-footer>
+        </div>
 
-      </card>
+      </card-body>
+
+      <card-footer style="text-align: right">
+        <div class="text-right">
+          <button class="btn btn-view">&nbsp;&nbsp;View Latest Orders&nbsp;&nbsp;</button>
+          <button class="btn btn-create-order">&nbsp;&nbsp;Create Order&nbsp;&nbsp;</button>
+        </div>
+      </card-footer>
+
+    </card>
 
 
-    <div class="grid-item col-xs-6 col-sm-8 col-md-6">
-      <div class="grid-item-content"></div>
-    </div>
-    <div class="grid-item col-xs-6 col-sm-4 col-md-3">
-      <div class="grid-item-content grid-item-content--height2"></div>
-    </div>
-    <div class="grid-item col-xs-6 col-sm-4 col-md-3">
-      <div class="grid-item-content"></div>
-    </div>
-    <div class="grid-item col-xs-6 col-sm-4 col-md-3">
-      <div class="grid-item-content"></div>
-    </div>
+    <!--PROJECTS INFO-->
+    <card header="Projects" class="grid-item col-lg-6" style="margin-bottom: 1.5em">
+      <card-body>
+        <div style="margin: 1em" class="row">
+          <div class="input-group col-md-6">
+          </div>
+          <div class="input-group col-md-6">
+            <search-bar style="width: 100%"></search-bar>
+          </div>
+
+        </div>
+        <div class="row">
+          <order-container colorNumber="projectnumbertext" class="no-padding col-md-4" title="At Risk" number=0
+                           imageSource="icon-atrisk"></order-container>
+          <order-container colorNumber="projectnumbertext" class="no-padding col-md-4" title="On Track" number=0
+                           imageSource="icon-ontrack"></order-container>
+          <order-container colorNumber="projectnumbertext" class="no-padding col-md-4" title="Closed" number=0
+                           imageSource="icon-closed"></order-container>
+        </div>
+      </card-body>
+
+    </card>
+
+
+    <!--SALES INFO-->
+    <card header="Sales" class="grid-item col-xs-6 col-sm-4 col-md-3 col-lg-6" style="margin-bottom: 1.5em">
+      <card-body>
+        <div class="row">
+          <order-container colorNumber="salestnumbertext" class="no-padding col-md-6" title="Lead Referrals" number=0
+                           imageSource="icon-referrals"></order-container>
+          <order-container colorNumber="salestnumbertext" class="no-padding col-md-6" title="Opportunities" number=499
+                           imageSource="icon-opportunities"></order-container>
+        </div>
+      </card-body>
+      <card-footer style="text-align: right">
+        <div class="text-right">
+          <button class="btn btn-submit-project">Submit a GOLD Lead</button>
+        </div>
+      </card-footer>
+
+    </card>
+
+
+    <!--SERVICE MANAGMENT REPORTS-->
+    <card header="Service Management" class="grid-item col-lg-6" style="margin-bottom: 1.5em">
+      <card-body>
+        <div class="row">
+
+          <circle-report class=" no-padding col-md-4"></circle-report>
+          <bar-chart class=" no-padding col-md-4"></bar-chart>
+          <event-report class="no-padding col-md-4"></event-report>
+
+          <button-container title="View All Tickets" class=" no-padding col-md-4"></button-container>
+          <button-container title="View All Alarms" class="no-padding col-md-4"></button-container>
+          <button-container title="Schedule Events" class="no-padding col-md-4"></button-container>
+
+          <req-opened-report days="7" date="Mar. 20 11:00 GMT" criticalRequest='2343' expirationRequest="1229"
+                             totalRequest="189" class=" no-padding col-md-4"></req-opened-report>
+          <pie-chart title="SERVICE REQUESTS" date='Mar. 20 11:00 GMT' total="189" class="no-padding col-md-4"
+                     [data]="serviceRequestData"></pie-chart>
+          <pie-chart2 title="CHANGE REQUESTS" date='Mar. 20 11:00 GMT' total="189" class="no-padding col-md-4"
+                      [data]="changeRequestData"></pie-chart2>
+
+
+        </div>
+      </card-body>
+      <card-footer style="text-align: right">
+        <div class="text-right">
+          <button class="btn btn-view">View All Requests</button>
+        </div>
+      </card-footer>
+
+    </card>
+
+
+    <!--CHATTER-->
+    <card header="Chatter" class="grid-item col-lg-6" style="margin-bottom: 1.5em">
+      <card-body>
+        <chatter [messages]="messages"></chatter>
+      </card-body>
+
+      <card-footer style="text-align: right">
+        <div class="text-right">
+          <button class="btn btn-view">View All Activity</button>
+        </div>
+      </card-footer>
+    </card>
+
+
+    <!--<div class="grid-item col-xs-6 col-sm-4 col-md-3">-->
+    <!--<div class="grid-item-content"></div>-->
+    <!--</div>-->
   </div>
 </div>
 
-
-
-
-
-<!--<div class="container-fluid">-->
-
-
-<!--<div class="grid">-->
-
-<!--<div class="grid-sizer col-lg-12"></div>-->
-
-<!--<div class="grid-item col-xs-12 col-lg-8">-->
-<!--<card header="Case Managament Activities">-->
-<!--<card-body>-->
-<!--<table class="table table-striped table-emails table-hover" id="folder-view">-->
-<!--<thead>-->
-<!--<tr>-->
-<!--<th colspan="2" id="folder-actions">-->
-<!--<button class="btn btn-info width-100 mb-xs" role="button">-->
-<!--Current-->
-<!--</button>-->
-<!--<button class="btn btn-gray width-100 mb-xs" role="button">-->
-<!--Archived-->
-<!--</button>-->
-<!--</th>-->
-<!--<th>-->
-<!--<div class="input-group col-md-6">-->
-<!--<search-bar style="width: 100%"></search-bar>-->
-<!--</div>-->
-<!--</th>-->
-<!--</tr>-->
-<!--</thead>-->
-<!--</table>-->
-<!--<div style="padding: 1em">-->
-<!--<div class="widget-body" style="overflow: auto">-->
-<!--<grid [rows]="cases" [columns]="caseColumns"></grid>-->
-<!--</div>-->
-<!--</div>-->
-<!--</card-body>-->
-
-<!--<card-footer style="text-align: right">-->
-<!--<div class="text-right">-->
-<!--<button class="btn btn-primary">Create New Case</button>-->
-<!--</div>-->
-<!--</card-footer>-->
-<!--</card>-->
-<!--</div>-->
-
-
-<!--<div class="grid-item col-lg-4 col-xs-12">-->
-
-<!--</div>-->
-
-
-<!--</div>-->
-
-<!--Case Managment Activities DIV-->
-
-
-<!--Billing and Customer Inquiries CARD-->
-
-
-
-<!--Orders CARD-->
-
-
-<!--Projects CARD-->
-<!--<div class="col-lg-6">-->
-<!--<card header="Projects" class="widget-container">-->
-<!--<card-body>-->
-<!--<div style="margin: 1em" class="row">-->
-<!--<div class="input-group col-md-6">-->
-<!--</div>-->
-<!--<div class="input-group col-md-6">-->
-<!--<search-bar style="width: 100%"></search-bar>-->
-<!--</div>-->
-
-<!--</div>-->
-<!--<div class="row">-->
-<!--<order-container colorNumber="projectnumbertext" class="col-md-4" title="At Risk" number=0-->
-<!--imageSource="icon-atrisk"></order-container>-->
-<!--<order-container colorNumber="projectnumbertext" class="col-md-4" title="On Track" number=0-->
-<!--imageSource="icon-ontrack"></order-container>-->
-<!--<order-container colorNumber="projectnumbertext" class="col-md-4" title="Closed" number=0-->
-<!--imageSource="icon-closed"></order-container>-->
-<!--</div>-->
-<!--</card-body>-->
-
-<!--</card>-->
-
-<!--Sales CARD-->
-<!--<card header="Sales" class=" widget-container">-->
-<!--<card-body>-->
-<!--<div class="row">-->
-<!--<order-container colorNumber="salestnumbertext" class="col-md-6" title="Lead Referrals" number=0-->
-<!--imageSource="icon-referrals"></order-container>-->
-<!--<order-container colorNumber="salestnumbertext" class="col-md-6" title="Opportunities" number=499-->
-<!--imageSource="icon-opportunities"></order-container>-->
-<!--</div>-->
-<!--</card-body>-->
-<!--<card-footer style="text-align: right">-->
-<!--<div class="text-right">-->
-<!--<button class="btn btn-submit-project">Submit a GOLD Lead</button>-->
-<!--</div>-->
-<!--</card-footer>-->
-
-<!--</card>-->
-<!--</div>-->
-
-<!--<card header="Chatter" class="col-lg-6">-->
-<!--<card-body>-->
-<!--<chatter [messages]="messages"></chatter>-->
-<!--</card-body>-->
-
-<!--<card-footer style="text-align: right">-->
-<!--<div class="text-right">-->
-<!--<button class="btn btn-view">View All Activity</button>-->
-<!--</div>-->
-<!--</card-footer>-->
-<!--</card>-->
-
-
-<!--<card header="Service Management" class=" widget-container col-lg-6">-->
-<!--<card-body>-->
-<!--<div class="row">-->
-
-<!--<circle-report class="col-md-4"></circle-report>-->
-<!--<bar-chart class="col-md-4"></bar-chart>-->
-<!--<event-report class="col-md-4"></event-report>-->
-
-<!--<button-container title="View All Tickets" class="col-md-4"></button-container>-->
-<!--<button-container title="View All Alarms" class="col-md-4"></button-container>-->
-<!--<button-container title="Schedule Events" class="col-md-4"></button-container>-->
-
-<!--<req-opened-report days="7" date="Mar. 20 11:00 GMT" criticalRequest='2343' expirationRequest="1229"-->
-<!--totalRequest="189" class="col-md-4"></req-opened-report>-->
-<!--<pie-chart title="SERVICE REQUESTS" date='Mar. 20 11:00 GMT' total="189" class="col-md-4" [data]="serviceRequestData" ></pie-chart>-->
-<!--<pie-chart2 title="CHANGE REQUESTS" date='Mar. 20 11:00 GMT' total="189" class="col-md-4" [data]="changeRequestData"></pie-chart2>-->
-
-
-<!--</div>-->
-<!--</card-body>-->
-<!--<card-footer style="text-align: right">-->
-<!--<div class="text-right">-->
-<!--<button class="btn btn-view">View All Requests</button>-->
-<!--</div>-->
-<!--</card-footer>-->
-
-<!--</card>-->
-
-<!--</div>-->

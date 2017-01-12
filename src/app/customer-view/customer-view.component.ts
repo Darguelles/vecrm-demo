@@ -49,10 +49,17 @@ export class CustomerViewComponent implements AfterViewInit{
     imagesLoaded( grid, function() {
       pckry = new Packery( grid, {
         itemSelector: '.grid-item',
-        columnWidth: '.grid-sizer',
+        // columnWidth: '.grid-sizer',
         percentPosition: true,
-        gutter: 20
+        // gutter: 5
       });
+
+      // DRAGGABLE EFFECT
+      pckry.getItemElements().forEach( function( itemElem ) {
+        var draggie = new Draggabilly( itemElem );
+        pckry.bindDraggabillyEvents( draggie );
+      });
+
     });
   }
 
