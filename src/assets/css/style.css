@@ -10458,9 +10458,9 @@ small, .small {
 .input-group-sm > .input-group-btn > .btn {
   padding: 5px 10px; }
 
-.input-group-btn > .btn {
-  padding-top: 10px;
-  padding-bottom: 9px; }
+/*.input-group-btn > .btn {*/
+  /*padding-top: 10px;*/
+  /*padding-bottom: 9px; }*/
 
 .btn-group.bootstrap-select > .btn {
   padding-top: 6px;
