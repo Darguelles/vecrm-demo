@@ -80,11 +80,22 @@
     padding-left: 0px !important;
   }
 
+  .breadcrumb>li+li:before {
+    padding: 0 5px;
+    color: #696262;
+     content: ">";
+  }
+
 
 </style>
 
 
-<div class="container-fluid">
+<ol class="breadcrumb" style="height: 50px; vertical-align: middle; background-color: lightgrey; padding-top: 15px; padding-left: 40px" >
+  <li class="breadcrumb-item">Dashboard</li>
+  <li class="active breadcrumb-item">Goverment of the United States</li>
+</ol>
+
+<div class="container-fluid"  style="padding: 20px 40px 42px;">
 
   <div class="grid">
     <div class="grid-sizer col-md-6 col-lg-2 "></div>
