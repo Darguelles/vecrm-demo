@@ -5,14 +5,56 @@ let Packery = require('packery');
 let Draggabilly = require('draggabilly');
 let imagesLoaded = require('imagesloaded');
 
-declare var jQuery:any;
+
+Packery.prototype.getShiftPositions = function (attrName) {
+  attrName = attrName || 'id';
+  var _this = this;
+  return this.items.map(function (item) {
+    return {
+      attr: item.element.getAttribute(attrName),
+      x: item.rect.x / _this.packer.width
+    }
+  });
+};
+
+Packery.prototype.initShiftLayout = function (positions, attr) {
+  if (!positions) {
+    // if no initial positions, run packery layout
+    this.layout();
+    return;
+  }
+  // parse string to JSON
+  if (typeof positions == 'string') {
+    try {
+      positions = JSON.parse(positions);
+    } catch (error) {
+      console.error('JSON parse error: ' + error);
+      this.layout();
+      return;
+    }
+  }
+
+  attr = attr || 'id'; // default to id attribute
+  this._resetLayout();
+  // set item order and horizontal position from saved positions
+  this.items = positions.map(function (itemPosition) {
+    var selector = '[' + attr + '="' + itemPosition.attr + '"]'
+    var itemElem = this.element.querySelector(selector);
+    var item = this.getItem(itemElem);
+    item.rect.x = itemPosition.x * this.packer.width;
+    return item;
+  }, this);
+  this.shiftLayout();
+};
+
+declare var jQuery: any;
 
 @Component({
   moduleId: module.id.toString(),
   selector: 'customer-view',
   templateUrl: 'customer-view.component.html',
 })
-export class CustomerViewComponent implements AfterViewInit{
+export class CustomerViewComponent implements AfterViewInit {
 
   cases: Array<Case>;
   caseColumns: Array<Column>;
@@ -43,26 +85,41 @@ export class CustomerViewComponent implements AfterViewInit{
   }
 
   ngAfterViewInit() {
+
     var grid = document.querySelector('.grid');
     let pckry;
 
-    imagesLoaded( grid, function() {
-      pckry = new Packery( grid, {
+    imagesLoaded(grid, function () {
+      pckry = new Packery(grid, {
         itemSelector: '.grid-item',
         columnWidth: '.grid-sizer',
         // rowHeight: 100,
         percentPosition: true,
+        initLayout: false, // disable initial layout
         // gutter: 5
       });
 
+      // get saved dragged positions
+      var initPositions = localStorage.getItem('dragPositions');
+// init layout with saved positions
+      pckry.initShiftLayout(initPositions, 'data-item-id');
+
       // DRAGGABLE EFFECT
-      pckry.getItemElements().forEach( function( itemElem ) {
-        var draggie = new Draggabilly( itemElem );
-        pckry.bindDraggabillyEvents( draggie );
+      pckry.getItemElements().forEach(function (itemElem) {
+        var draggie = new Draggabilly(itemElem);
+        pckry.bindDraggabillyEvents(draggie);
+      });
+
+      // save drag positions on event
+      pckry.on('dragItemPositioned', function () {
+        var positions = pckry.getShiftPositions('data-item-id');
+        // save drag positions
+        localStorage.setItem('dragPositions', JSON.stringify(positions));
       });
 
     });
   }
+
 
   getServiceRequestData(): Array<number> {
     return [60, 70, 80, 100, 200, 250, 300, 541, 150]
@@ -314,3 +371,4 @@ interface User {
   attachDocument: string;
   attachReceiver: string;
 }
+
