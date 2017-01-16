@@ -6,8 +6,37 @@
     height: 100%;
   }
 
-  .btn{
-    box-shadow: 1px 2px 2px #888888!important
+  /*Verizon fonts*/
+  /*TODO  addapt it to entore project */
+
+  h1.normalHeading, h2.normalHeading, h3.normalHeading, h4.normalHeading {
+    font-family: "NeueHaasGroteskTextMedium", Arial, Helvetica, sans-serif;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: "NeueHaasGroteskDisplayBold", Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    line-height: 100%;
+  }
+
+  .lowerpriority {
+    color: #d2d3d4 !important;
+  }
+
+  .highpriority {
+    color: #cd040b !important;
+  }
+
+  .footnote, .timestamp {
+    color: #595a5d !important;
+    font-size: 11px !important;
+    font-style: italic !important;
+  }
+
+  /*end of verizon fonts*/
+
+  .btn {
+    box-shadow: 1px 2px 2px #888888 !important
   }
 
   .btn-create-case {
@@ -80,22 +109,23 @@
     padding-left: 0px !important;
   }
 
-  .breadcrumb>li+li:before {
+  .breadcrumb > li + li:before {
     padding: 0 5px;
     color: #696262;
-     content: ">";
+    content: ">";
   }
 
 
 </style>
 
 
-<ol class="breadcrumb" style="height: 50px; vertical-align: middle; background-color: lightgrey; padding-top: 15px; padding-left: 40px" >
+<ol class="breadcrumb"
+    style="height: 50px; vertical-align: middle; background-color: lightgrey; padding-top: 15px; padding-left: 40px">
   <li class="breadcrumb-item">Dashboard</li>
   <li class="active breadcrumb-item">Goverment of the United States</li>
 </ol>
 
-<div class="container-fluid"  style="padding: 20px 40px 42px;">
+<div class="container-fluid" style="padding: 20px 40px 42px;">
 
   <div class="grid">
     <div class="grid-sizer col-md-6 col-lg-2 "></div>
@@ -130,7 +160,7 @@
 
       <card-footer style="text-align: right">
         <div class="text-right">
-          <button class="btn btn-primary" >Create New Case</button>
+          <button class="btn btn-primary">Create New Case</button>
         </div>
       </card-footer>
     </card>
@@ -199,7 +229,7 @@
                 0 - 360 Days
               </button>
             </th>
-            <th colspan="2" >
+            <th colspan="2">
               <div>
                 <search-bar style="width: 100%"></search-bar>
               </div>
