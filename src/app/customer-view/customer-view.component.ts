@@ -1,10 +1,9 @@
 import {Component, AfterViewChecked, ElementRef, AfterViewInit, OnInit} from '@angular/core';
-import {Column} from '../grid/Column';
+import {Column} from '../grid/column.ts';
 
 let Packery = require('packery');
 let Draggabilly = require('draggabilly');
 let imagesLoaded = require('imagesloaded');
-
 
 Packery.prototype.getShiftPositions = function (attrName) {
   attrName = attrName || 'id';
