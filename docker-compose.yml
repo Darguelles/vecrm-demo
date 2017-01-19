@@ -1,0 +1,11 @@
+version: "2"
+services:
+ vztemplate:
+  build:
+   context: .
+  container_name: vecrn-dashboard
+  ports:
+  - "3000:3000"
+  volumes:
+  - ".:/var/www/vztemplate"
+  - "/var/www/vztemplate/node_modules"
