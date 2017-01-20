@@ -60,6 +60,7 @@ export class CustomerViewComponent implements AfterViewInit {
   orders: Array<Order>;
   orderColumns: Array<Column>;
   messages: Array<User>;
+  showStyle: Boolean = false;
 
   // Report
   serviceRequestData: number[];
@@ -82,6 +83,24 @@ export class CustomerViewComponent implements AfterViewInit {
     this.changeRequestColours = this.getChangeRequestColours();
 
   }
+
+  getStyle() {
+    if(this.showStyle) {
+      return "inline";
+    } else {
+      return "none";
+    }
+  }
+
+  getHamburger() {
+    if(this.showStyle) {
+      return "open";
+    } else {
+      return "";
+    }
+  }
+
+
 
   ngAfterViewInit() {
 
