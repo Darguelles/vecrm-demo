@@ -95,9 +95,9 @@
 <div>
   <div class="pull-right back-hamburger" (click)="showStyle = !showStyle;">
     <div id="nav-icon" (click)="showStyle = !showStyle;" [class.open]="getHamburger()">
-      <span style="margin-top: 1.3em;"></span>
-      <span style="margin-top: 0.63em;"></span>
-      <span></span>
+      <span style="margin-top: 1.3em;" (click)="showStyle = !showStyle;"></span>
+      <span style="margin-top: 0.63em;" (click)="showStyle = !showStyle;"></span>
+      <span (click)="showStyle = !showStyle;"></span>
     </div>
   </div>
 
