@@ -90,6 +90,34 @@
     float: none;
   }
 
+  .hamburger-option {
+    background-color: #e5cb2f;
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    box-shadow: 1px 2px 3px #888888;
+    /*position: fixed;*/
+    /*z-index: 20;*/
+    /*margin-left: 7em;*/
+    margin-top: 0.8em;
+    /*margin-left: 13em;*/
+  }
+
+  .hamburger-content {
+    position: fixed;
+    z-index: 10;
+    margin-top: 7em;
+    width: 50px;
+    margin-left: 8em;
+  }
+
+  .icon-position {
+    margin-top: 12px;
+    margin-left: -1px;
+    color: white;
+  }
+
+
 </style>
 
 <div>
@@ -102,26 +130,22 @@
   </div>
 
 
-  <div id="options-f-hamb" [style.display]="getStyle()"
-       style="position: fixed; z-index: 10; margin-top: 7em; width: 50px; margin-left: 6.5em;   "  >
-    <div class="col-lg-1 vcenter">
-      <img class="image-menu-dropdown" src="../../../../assets/img/header/customer-management.png">
+  <div id="options-f-hamb" [style.display]="getStyle()" class="hamburger-content" >
+    <div class="col-lg-1 vcenter hamburger-option">
+      <!--<img class="image-menu-dropdown" src="../../../../assets/img/header/customer-management.png">-->
+      <span><i class="glyphicon glyphicon-glass icon-position"></i></span>
     </div>
-    &nbsp;
-    <div class="col-lg-1 vcenter">
-      <img class="image-menu-dropdown" src="../../../../assets/img/header/service-management.png">
+    <div class="col-lg-1 vcenter hamburger-option">
+      <!--<img class="image-menu-dropdown" src="../../../../assets/img/header/service-management.png">-->
+      <span><i class="glyphicon glyphicon-star icon-position"></i></span>
     </div>
-    &nbsp;
-    <div class="col-lg-1 vcenter">
-      <img class="image-menu-dropdown" src="../../../../assets/img/header/billing.png">
+    <div class="col-lg-1 vcenter hamburger-option">
+      <!--<img class="image-menu-dropdown" src="../../../../assets/img/header/billing.png">-->
+      <span><i class="glyphicon glyphicon-signal icon-position"></i></span>
     </div>
-    &nbsp;
-    <div class="col-lg-1 vcenter">
-      <img class="image-menu-dropdown" src="../../../../assets/img/header/orders.png">
-    </div>
-    &nbsp;
-    <div class="col-lg-1 vcenter">
-      <img class="image-menu-dropdown" src="../../../../assets/img/header/sales.png">
+    <div class="col-lg-1 vcenter hamburger-option">
+      <!--<img class="image-menu-dropdown" src="../../../../assets/img/header/orders.png">-->
+      <span><i class="glyphicon glyphicon-flag icon-position"></i></span>
     </div>
   </div>
 
