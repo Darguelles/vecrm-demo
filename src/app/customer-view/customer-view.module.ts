@@ -13,11 +13,12 @@ import {PieChartComponent} from '../report/pie-chart/pie.chart.component';
 import {ChatterComponent} from '../components/chatter/chatter.component';
 import {PieChart2Component} from '../report/pie-chart/pie.chart2.component';
 import {GenericComponentModule} from "../components/generic-component.module";
+import {MenuButtonComponentModule} from "../components/materialize/menu-button/menu-button.module";
 
 
 @NgModule({
   imports: [BrowserModule, RouterModule, CustomerViewRoutes, ChartsModule,
-    GenericComponentModule],
+    GenericComponentModule, MenuButtonComponentModule],
   exports: [],
   declarations: [CustomerViewComponent, CircleReportComponent, BarChartComponent, EventReportComponent, ReqOpenedReportComponent, PieChartComponent, ChatterComponent, PieChart2Component],
   providers: [CustomerViewService],
