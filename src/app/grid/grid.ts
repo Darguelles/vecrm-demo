@@ -30,6 +30,7 @@ export class Grid implements OnInit {
 
   ngOnInit() {
     this.rowsTable = this.changeRowsQuantity(this.recordsOptions[0]);
+    this.currentPage = 1;
   }
 
   sort(key) {
@@ -63,16 +64,18 @@ export class Grid implements OnInit {
   }
 
   goToNextPage() {
+
     let totalRows = this.rows.length;
     if (totalRows <= this.totalRowsPage) {
       this.currentPage = 1;
     } else {
 
-      let currentIndex = this.indexOfCurrentPageLastRow + 1;
+      let currentIndex = this.indexOfCurrentPageLastRow;
+      console.log(currentIndex)
       let indexes = [];
       this.rowsTable = [];
       this.rows.forEach((item, index) => {
-        if (index >= currentIndex && index <= (this.totalRowsPage - 1)) {
+        if (index > currentIndex && indexes.length < (this.totalRowsPage)) {
           this.rowsTable.push(item);
           indexes.push(index);
         }
@@ -81,11 +84,36 @@ export class Grid implements OnInit {
       this.indexOfCurrentPageFirstRow = indexes[0];
       this.indexOfCurrentPageLastRow = indexes[indexes.length - 1];
 
+      console.log('CURRENT INDEX : '+this.indexOfCurrentPageLastRow)
+
       this.currentPage = this.currentPage + 1;
     }
   }
 
   goToBackPage() {
+    let totalRows = this.rows.length;
+    if (totalRows <= this.totalRowsPage) {
+      this.currentPage = 1;
+    } else {
+
+      let currentIndex = this.indexOfCurrentPageFirstRow;
+      let indexes = [];
+      this.rowsTable = [];
+
+      this.rows.forEach((item, index) => {
+        if (index < currentIndex && indexes.length < (this.totalRowsPage) && index >= (this.totalRowsPage * (this.currentPage - 2))) {
+          console.log(index)
+          console.log(item)
+          this.rowsTable.push(item);
+          indexes.push(index);
+        }
+      });
+
+      this.indexOfCurrentPageFirstRow = indexes[0];
+      this.indexOfCurrentPageLastRow = indexes[indexes.length - 1];
+
+      this.currentPage = this.currentPage - 1;
+    }
 
   }
 
