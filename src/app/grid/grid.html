@@ -1,12 +1,40 @@
+<style xmlns="http://www.w3.org/1999/html">
+
+  th:first-child {
+    position: fixed;
+    left: 5px
+  }
+
+</style>
+
+
 <table class="table table-striped">
-    <thead style="background-color: #4d4d4d">
-        <tr>
-          <td *ngFor="let col of columns" style="text-align: center" ><a (click)="sort(col.name)"><b style="color: white">{{col.descr}}</b></a></td>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let row of rows" class="{{row.class}}"  >
-            <td *ngFor="let col of columns">{{row[col.name]}}</td>
-        </tr>
-    </tbody>
+  <thead style="background-color: #4d4d4d">
+  <tr>
+    <td *ngFor="let col of columns" style="text-align: center"><a (click)="sort(col.name)"><b style="color: white">{{col.descr}}</b></a>
+    </td>
+  </tr>
+  </thead>
+  <tbody>
+
+  <tr *ngFor="let row of rowsTable" class="{{row.class}}">
+    <td *ngFor="let col of columns">{{row[col.name]}}</td>
+  </tr>
+  </tbody>
 </table>
+
+<div style="background-color: #eeeeee; padding: 1em">
+  Showing {{indexOfCurrentPageFirstRow + 1}} - {{indexOfCurrentPageLastRow + 1}} of {{rows?.length}} records.&nbsp;
+  <b>|</b> &nbsp;
+  <select [(ngModel)]="totalRowsPage" #t (change)="changeRowsQuantity(t.value)">
+    <option *ngFor="let option of recordsOptions" [value]="option">{{option}} records per page</option>
+  </select>
+
+  <div class="pull-right">
+    <a style="margin-right: 0.4em; color: #2b2b2b"><i (click)="goToBackPage()" class="glyphicon glyphicon-menu-left"></i></a>
+    page&nbsp; <input value="{{currentPage}}" style="width: 30px; margin-top: -6px;"> &nbsp;of {{totalPages}}
+    <a style="margin-left: 0.4em; color: #2b2b2b"><i (click)="goToNextPage()" class="glyphicon glyphicon-menu-right"></i></a>
+
+  </div>
+
+</div>
