@@ -12,7 +12,7 @@ export class Grid implements OnInit {
   columns: Array<Column>;
   rows: Array<any> = [];
   rowsTable: Array<any> = [];
-  currentPage: number = 0;
+  currentPage: number = 1;
 
   leftArrowClass: string = '';
   rightArrowClass: string = '';
@@ -41,13 +41,13 @@ export class Grid implements OnInit {
     this.leftArrowClass = '';
     this.rightArrowClass = '';
 
-    if(this.rows.length <= this.totalRowsPage){
+    if (this.rows.length <= this.totalRowsPage) {
       this.rightArrowClass = 'blocked'
     }
-    if(this.currentPage == this.totalPages){
+    if (this.currentPage == this.totalPages) {
       this.rightArrowClass = 'blocked'
     }
-    if(this.currentPage == 1){
+    if (this.currentPage == 1) {
       this.leftArrowClass = 'blocked'
     }
   }
@@ -56,22 +56,55 @@ export class Grid implements OnInit {
     this.sorter.sort(key, this.rows);
   }
 
-  changeRowsQuantity(numberOfRows) {
+  changeRowsQuantity(rows) {
+
+    let newNumberOfRows = parseInt(rows);
+
+    let oldRowsPerPage = this.totalRowsPage;
+
     let indexes = [];
     this.rowsTable = [];
-    this.totalRowsPage = numberOfRows
-    this.rows.forEach((item, index) => {
-      if (index >= this.indexOfCurrentPageFirstRow && index <= (numberOfRows - 1)) {
-        this.rowsTable.push(item);
-        indexes.push(index);
-      }
-    });
-    console.log(indexes);
+    this.totalRowsPage = newNumberOfRows
 
-    this.totalPages = this.calculateNumberOfPages();
+    if (this.currentPage == 1 || this.rows.length <= this.totalRowsPage) {
+
+      this.rows.forEach((item, index) => {
+        if (index >= this.indexOfCurrentPageFirstRow && index <= (newNumberOfRows - 1)) {
+          this.rowsTable.push(item);
+          indexes.push(index);
+        }
+      });
+
+      this.totalPages = this.calculateNumberOfPages();
 //  Update indexes
-    this.indexOfCurrentPageFirstRow = indexes[0];
-    this.indexOfCurrentPageLastRow = indexes[indexes.length - 1];
+      this.indexOfCurrentPageFirstRow = indexes[0];
+      this.indexOfCurrentPageLastRow = indexes[indexes.length - 1];
+
+    }
+    else {
+
+      // DEBO SABER CUANTOS REGISTROS VOY HASTA EL MOMENTO
+      let totalRecordsReaded = oldRowsPerPage * this.currentPage
+
+      if (totalRecordsReaded > this.rows.length) {
+        totalRecordsReaded = this.rows.length;
+      }
+
+      let pageCounter = 1;
+      while (totalRecordsReaded > newNumberOfRows) {
+        if (totalRecordsReaded > newNumberOfRows) {
+          newNumberOfRows = newNumberOfRows + this.totalRowsPage
+          pageCounter++;
+        }
+      }
+
+      this.totalPages = this.calculateNumberOfPages();
+
+      this.goToPageNumber(pageCounter);
+
+      this.currentPage = pageCounter;
+
+    }
 
     this.showArrows();
 
@@ -132,6 +165,36 @@ export class Grid implements OnInit {
       this.currentPage = this.currentPage - 1;
       this.showArrows();
     }
+
+  }
+
+  goToPageNumber(number) {
+
+    if (number < 0 || number > this.totalPages) {
+      this.currentPage = this.currentPage;
+      return this.currentPage;
+    }
+
+    let indexes = [];
+    this.rowsTable = [];
+
+    let indexStart = this.totalRowsPage * number - 1
+
+
+    if (indexStart > this.rows.length) {
+      indexStart = indexStart - this.totalRowsPage
+    }
+    let counter = 1;
+    this.rows.forEach((item, index) => {
+      if (index >= (indexStart) && counter <= this.totalRowsPage) {
+        this.rowsTable.push(item);
+        indexes.push(index);
+        counter++;
+      }
+    });
+
+    this.indexOfCurrentPageFirstRow = indexes[0];
+    this.indexOfCurrentPageLastRow = indexes[indexes.length - 1];
 
   }
 

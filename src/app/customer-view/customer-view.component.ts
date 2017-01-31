@@ -178,7 +178,7 @@ export class CustomerViewComponent implements AfterViewInit {
   getCases(): Array<Case> {
     return [
       {
-        caseId: '2014080912366',
+        caseId: '12014080912366',
         title: 'DHS HV Case',
         dueDate: '015-01-03',
         category: 'High Voltage',
@@ -188,7 +188,7 @@ export class CustomerViewComponent implements AfterViewInit {
         class: 'table-success'
       },
       {
-        caseId: '2014080912366',
+        caseId: '22014080912366',
         title: 'DHS HV Case',
         dueDate: '015-01-03',
         category: 'High Voltage',
@@ -198,7 +198,7 @@ export class CustomerViewComponent implements AfterViewInit {
         class: 'table-success'
       },
       {
-        caseId: '2014080912366',
+        caseId: '32014080912366',
         title: 'DHS HV Case',
         dueDate: '015-01-03',
         category: 'Other',
@@ -208,7 +208,7 @@ export class CustomerViewComponent implements AfterViewInit {
         class: 'table-danger'
       },
       {
-        caseId: '2014080912366',
+        caseId: '42014080912366',
         title: 'DHS HV Case',
         dueDate: '015-01-03',
         category: 'Calling Campaign',
@@ -217,6 +217,128 @@ export class CustomerViewComponent implements AfterViewInit {
         status: 'New',
         class: 'table-warning'
       },
+      {
+        caseId: '52014080912366',
+        title: 'DHS HV Case',
+        dueDate: '015-01-03',
+        category: 'High Voltage',
+        createdBy: 'Bryan Barbour',
+        assignedTo: 'dale.barbour@verizon.com',
+        status: 'completed',
+        class: 'table-success'
+      },
+      {
+        caseId: '62014080912366',
+        title: 'DHS HV Case',
+        dueDate: '015-01-03',
+        category: 'Other',
+        createdBy: 'Balaji Anarhachari',
+        assignedTo: 'balaji.x.anachari@verizon.com',
+        status: 'New',
+        class: 'table-danger'
+      },
+      {
+        caseId: '72014080912366',
+        title: 'DHS HV Case',
+        dueDate: '015-01-03',
+        category: 'Calling Campaign',
+        createdBy: 'Manuel Francia',
+        assignedTo: 'mfrancia@verizon.com',
+        status: 'New',
+        class: 'table-warning'
+      },
+
+      {
+        caseId: '82014080912366',
+        title: 'DHS HV Case',
+        dueDate: '015-01-03',
+        category: 'High Voltage',
+        createdBy: 'Bryan Barbour',
+        assignedTo: 'dale.barbour@verizon.com',
+        status: 'completed',
+        class: 'table-success'
+      },
+      {
+        caseId: '92014080912366',
+        title: 'DHS HV Case',
+        dueDate: '015-01-03',
+        category: 'Other',
+        createdBy: 'Balaji Anarhachari',
+        assignedTo: 'balaji.x.anachari@verizon.com',
+        status: 'New',
+        class: 'table-danger'
+      },
+      {
+        caseId: '102014080912366',
+        title: 'DHS HV Case',
+        dueDate: '015-01-03',
+        category: 'Calling Campaign',
+        createdBy: 'Manuel Francia',
+        assignedTo: 'mfrancia@verizon.com',
+        status: 'New',
+        class: 'table-warning'
+      },
+      {
+        caseId: '112014080912366',
+        title: 'DHS HV Case',
+        dueDate: '015-01-03',
+        category: 'High Voltage',
+        createdBy: 'Bryan Barbour',
+        assignedTo: 'dale.barbour@verizon.com',
+        status: 'completed',
+        class: 'table-success'
+      },
+      {
+        caseId: '122014080912366',
+        title: 'DHS HV Case',
+        dueDate: '015-01-03',
+        category: 'Other',
+        createdBy: 'Balaji Anarhachari',
+        assignedTo: 'balaji.x.anachari@verizon.com',
+        status: 'New',
+        class: 'table-danger'
+      },
+      {
+        caseId: '132014080912366',
+        title: 'DHS HV Case',
+        dueDate: '015-01-03',
+        category: 'Calling Campaign',
+        createdBy: 'Manuel Francia',
+        assignedTo: 'mfrancia@verizon.com',
+        status: 'New',
+        class: 'table-warning'
+      }
+      ,
+      {
+        caseId: '142014080912366',
+        title: 'DHS HV Case',
+        dueDate: '015-01-03',
+        category: 'High Voltage',
+        createdBy: 'Bryan Barbour',
+        assignedTo: 'dale.barbour@verizon.com',
+        status: 'completed',
+        class: 'table-success'
+      },
+      {
+        caseId: '152014080912366',
+        title: 'DHS HV Case',
+        dueDate: '015-01-03',
+        category: 'Other',
+        createdBy: 'Balaji Anarhachari',
+        assignedTo: 'balaji.x.anachari@verizon.com',
+        status: 'New',
+        class: 'table-danger'
+      },
+      {
+        caseId: '162014080912366',
+        title: 'DHS HV Case',
+        dueDate: '015-01-03',
+        category: 'Calling Campaign',
+        createdBy: 'Manuel Francia',
+        assignedTo: 'mfrancia@verizon.com',
+        status: 'New',
+        class: 'table-warning'
+      }
     ];
   }
 

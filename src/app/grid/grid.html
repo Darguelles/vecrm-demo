@@ -48,7 +48,7 @@
 
   <div class="pull-right">
     <a class="left-arrow {{leftArrowClass}}"><i (click)="goToBackPage()" class="glyphicon glyphicon-menu-left"></i></a>
-    page&nbsp; <input value="{{currentPage}}" style="width: 30px; margin-top: -6px;"> &nbsp;of {{totalPages}}
+    page&nbsp; <input  (keyup)="goToPageNumber(currentPage=$event.target.value)"  value="{{currentPage}}" style="width: 30px; margin-top: -6px;"> &nbsp;of {{totalPages}}
     <a class="right-arrow {{rightArrowClass}}"><i (click)="goToNextPage()"
                                                   class="glyphicon glyphicon-menu-right"></i></a>
 
