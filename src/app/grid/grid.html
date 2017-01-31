@@ -5,6 +5,22 @@
     left: 5px
   }
 
+  .left-arrow {
+    margin-right: 0.4em;
+    color: #2b2b2b;
+  }
+
+  .right-arrow {
+    margin-left: 0.4em;
+    color: #2b2b2b;
+  }
+
+  .blocked {
+    color: gray;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
 </style>
 
 
@@ -31,9 +47,10 @@
   </select>
 
   <div class="pull-right">
-    <a style="margin-right: 0.4em; color: #2b2b2b"><i (click)="goToBackPage()" class="glyphicon glyphicon-menu-left"></i></a>
+    <a class="left-arrow {{leftArrowClass}}"><i (click)="goToBackPage()" class="glyphicon glyphicon-menu-left"></i></a>
     page&nbsp; <input value="{{currentPage}}" style="width: 30px; margin-top: -6px;"> &nbsp;of {{totalPages}}
-    <a style="margin-left: 0.4em; color: #2b2b2b"><i (click)="goToNextPage()" class="glyphicon glyphicon-menu-right"></i></a>
+    <a class="right-arrow {{rightArrowClass}}"><i (click)="goToNextPage()"
+                                                  class="glyphicon glyphicon-menu-right"></i></a>
 
   </div>
 

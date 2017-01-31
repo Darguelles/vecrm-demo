@@ -14,6 +14,9 @@ export class Grid implements OnInit {
   rowsTable: Array<any> = [];
   currentPage: number = 0;
 
+  leftArrowClass: string = '';
+  rightArrowClass: string = '';
+
   sorter: Sorter;
   recordsOptions = [1, 2, 3, 4, 5];
   indexOfCurrentPageFirstRow: number = 0;
@@ -31,6 +34,22 @@ export class Grid implements OnInit {
   ngOnInit() {
     this.rowsTable = this.changeRowsQuantity(this.recordsOptions[0]);
     this.currentPage = 1;
+    this.showArrows()
+  }
+
+  showArrows() {
+    this.leftArrowClass = '';
+    this.rightArrowClass = '';
+
+    if(this.rows.length <= this.totalRowsPage){
+      this.rightArrowClass = 'blocked'
+    }
+    if(this.currentPage == this.totalPages){
+      this.rightArrowClass = 'blocked'
+    }
+    if(this.currentPage == 1){
+      this.leftArrowClass = 'blocked'
+    }
   }
 
   sort(key) {
@@ -54,6 +73,8 @@ export class Grid implements OnInit {
     this.indexOfCurrentPageFirstRow = indexes[0];
     this.indexOfCurrentPageLastRow = indexes[indexes.length - 1];
 
+    this.showArrows();
+
     return this.rowsTable;
   }
 
@@ -71,7 +92,6 @@ export class Grid implements OnInit {
     } else {
 
       let currentIndex = this.indexOfCurrentPageLastRow;
-      console.log(currentIndex)
       let indexes = [];
       this.rowsTable = [];
       this.rows.forEach((item, index) => {
@@ -84,9 +104,8 @@ export class Grid implements OnInit {
       this.indexOfCurrentPageFirstRow = indexes[0];
       this.indexOfCurrentPageLastRow = indexes[indexes.length - 1];
 
-      console.log('CURRENT INDEX : '+this.indexOfCurrentPageLastRow)
-
       this.currentPage = this.currentPage + 1;
+      this.showArrows();
     }
   }
 
@@ -102,8 +121,6 @@ export class Grid implements OnInit {
 
       this.rows.forEach((item, index) => {
         if (index < currentIndex && indexes.length < (this.totalRowsPage) && index >= (this.totalRowsPage * (this.currentPage - 2))) {
-          console.log(index)
-          console.log(item)
           this.rowsTable.push(item);
           indexes.push(index);
         }
@@ -113,6 +130,7 @@ export class Grid implements OnInit {
       this.indexOfCurrentPageLastRow = indexes[indexes.length - 1];
 
       this.currentPage = this.currentPage - 1;
+      this.showArrows();
     }
 
   }
