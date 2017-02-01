@@ -18,7 +18,7 @@ export class Grid implements OnInit {
   rightArrowClass: string = '';
 
   sorter: Sorter;
-  recordsOptions = [1, 2, 3, 4, 5];
+  recordsOptions = [10, 15 , 20];
   indexOfCurrentPageFirstRow: number = 0;
   indexOfCurrentPageLastRow: number = 0;
 
