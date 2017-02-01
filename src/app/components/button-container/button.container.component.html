@@ -13,8 +13,8 @@
 
   .arrow-button{
     margin-left: -5px;
-    border-left: 2px solid;
-    border-left-color: gray;
+    /*border-left: 2px solid;*/
+    /*border-left-color: gray;*/
   }
 
   .btn-create-case {
@@ -22,9 +22,19 @@
     color: white;
   }
 
+  .arrow-btn-create-case {
+    border-left: 2px solid;
+    border-left-color: #9b0308;
+  }
+
   .btn-view {
     background-color: rgb(162, 171, 176);
     color: white;
+  }
+
+  .arrow-btn-view {
+    border-left: 2px solid;
+    border-left-color: gray;
   }
 
   .btn-create-bill {
@@ -32,9 +42,20 @@
     color: white;
   }
 
+  .arrow-btn-create-bill {
+    border-left: 2px solid;
+    border-left-color: #f25a1c;
+  }
+
   .btn-create-order {
     background-color: brown;
     color: white;
+
+  }
+
+  .arrow-btn-create-order {
+    border-left: 2px solid;
+    border-left-color: #780206;
   }
 
   .btn-submit-project {
@@ -42,13 +63,24 @@
     color: white;
   }
 
+  .arrow-btn-submit-project {
+    border-left: 2px solid;
+    border-left-color: #1a6c97;
+  }
+
   .btn-info {
     background-color: #046694;
   }
+
+  .arrow-button-info {
+    border-left: 2px solid;
+    border-left-color: blue;
+  }
+
 </style>
 
 
   <div class="text-right">
     <button class="btn {{buttonClass}}">{{title}}</button>
-    <button class="btn {{buttonClass}} arrow-button"><span><i class="glyphicon glyphicon-menu-right"></i></span></button>
+    <button class="btn {{buttonClass}} arrow-button {{arrowClass}}"><span><i class="glyphicon glyphicon-menu-right"></i></span></button>
   </div>

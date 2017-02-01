@@ -142,10 +142,32 @@
     font-size: x-small;
   }
 
-  .btn-table-head{
+  .btn-table-head {
     color: #fff;
     background-color: #3e78d0;
     border-color: #3e78d0;
+  }
+
+  .alert-info {
+    background-color: #3e78d0;
+    color: white;
+    margin-left: -0.8em;
+    margin-top: -1em;
+    padding-top: 0.5em;
+  }
+
+  .notinfo {
+    border-radius: 0%;
+    width: 1.2em;
+    height: 1.2em;
+    text-align: center;
+    vertical-align: middle;
+    display: inline-block;
+  }
+
+  ul > li.active {
+    border-top: 2px solid;
+    border-top-color: orange;
   }
 
 </style>
@@ -169,20 +191,29 @@
         <h1>Goverment of the United States</h1>
       </div>
       <div class="row col-lg-5" style="float: right; align-items: center;">
-        <div class="row col-lg-3">
-          <div class="order-image" style="width: 15%">
-            <img class="x-icon sprite-icon-background insidepanel-icon x-icon-default icon-suspension-alert">
+        <div class="row col-lg-4">
+          <div class="order-image">
+            <img style="margin-top: -0.1em;"
+                 class="x-icon sprite-icon-background insidepanel-icon x-icon-default icon-suspension-alert">
+            <span class="notinfo alert-info ">
+              <div style="    margin-top: -0.6em;">1</div>
+            </span>
           </div>
-          <div style="width: 70%">
+          <div>
             <label class="customer-info-label">VzB Suspension Alert</label>
           </div>
         </div>
 
-        <div class="row col-lg-3">
-          <div class="order-image" style="width: 15%">
-            <img class="x-icon sprite-icon-background insidepanel-icon x-icon-default icon-hihg-voltage">
+        <div class="row col-lg-4">
+          <div class="order-image">
+            <img style="margin-top: -0.1em;"
+                 class="x-icon sprite-icon-background insidepanel-icon x-icon-default icon-hihg-voltage">
+            <!--<span class="notinfo alert-info"><label>1</label></span>-->
+            <span class="notinfo alert-info ">
+                   <div style="    margin-top: -0.6em;">4</div>
+                </span>
           </div>
-          <div style="width: 70%">
+          <div>
             <label class="customer-info-label">High Voltage</label>
           </div>
         </div>
@@ -305,7 +336,8 @@
 
       <card-footer style="text-align: right">
         <div class="text-right">
-          <button-container title="Create New Case" buttonClass="btn-create-case"></button-container>
+          <button-container title="Create New Case" buttonClass="btn-create-case"
+                            arrowClass="arrow-btn-create-case"></button-container>
         </div>
       </card-footer>
     </card>
@@ -319,11 +351,12 @@
         <div style="background-color: whitesmoke">
           <div class="clearfix">
             <ul class="nav nav-tabs pull-xs-left" id="myTab" role="tablist">
-              <li class="nav-item">
-                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#basic" role="tab"
+              <li class="nav-item active" >
+                <a class="nav-link" id="home-tab" data-toggle="tab" href="#basic" role="tab"
                    aria-controls="basic" aria-expanded="true">Basic</a>
               </li>
-              <li class="nav-item" style="background-color: whitesmoke; border-right: 0.2px solid; border-right-color: darkgray;">
+              <li class="nav-item"
+                  style="background-color: whitesmoke; border-right: 0.2px solid; border-right-color: darkgray;">
                 <a class="nav-link" id="profile-tab" data-toggle="tab" href="#assumtion" role="tab"
                    aria-controls="assumtion" aria-expanded="false">Assumtion</a>
               </li>
@@ -378,8 +411,10 @@
       </card-body>
       <card-footer style="text-align: right">
         <div class=" row text-right" style="margin-left: 33em;  ">
-          <button-container title="Create New Case" buttonClass="btn-view"></button-container>
-          <button-container style="margin-left: 3px;" title="&nbsp;&nbsp;Create Bill Inquiry&nbsp;&nbsp;" buttonClass="btn-create-bill"></button-container>
+          <button-container title="Create New Case" buttonClass="btn-view"
+                            arrowClass="arrow-btn-view"></button-container>
+          <button-container style="margin-left: 3px;" title="&nbsp;&nbsp;Create Bill Inquiry&nbsp;&nbsp;"
+                            buttonClass="btn-create-bill" arrowClass="arrow-btn-create-bill"></button-container>
         </div>
       </card-footer>
     </card>
@@ -439,8 +474,10 @@
 
       <card-footer style="text-align: right">
         <div class=" row text-right" style="margin-left: 33em;  ">
-          <button-container title="&nbsp;View Latest Orders&nbsp;&nbsp;" buttonClass="btn-view"></button-container>
-          <button-container style="margin-left: 3px;" title="&nbsp;&nbsp;Create Order&nbsp;&nbsp;" buttonClass="btn-create-order"></button-container>
+          <button-container title="&nbsp;View Latest Orders&nbsp;&nbsp;" buttonClass="btn-view"
+                            arrowClass="arrow-btn-view"></button-container>
+          <button-container style="margin-left: 3px;" title="&nbsp;&nbsp;Create Order&nbsp;&nbsp;"
+                            buttonClass="btn-create-order" arrowClass="arrow-btn-create-order"></button-container>
         </div>
       </card-footer>
 
@@ -485,7 +522,8 @@
       </card-body>
       <card-footer style="text-align: right">
         <div class="text-right">
-          <button-container title="&nbsp;Submit a GOLD Lead&nbsp;&nbsp;" buttonClass="btn-submit-project"></button-container>
+          <button-container title="&nbsp;Submit a GOLD Lead&nbsp;&nbsp;" buttonClass="btn-submit-project"
+                            arrowClass="arrow-btn-submit-project"></button-container>
         </div>
       </card-footer>
 
@@ -501,9 +539,12 @@
           <bar-chart class=" no-padding col-md-4"></bar-chart>
           <event-report class="no-padding col-md-4"></event-report>
 
-          <button-container style="padding: 0.5em" title="View All Tickets" buttonClass="btn-view" class=" no-padding col-md-4"></button-container>
-          <button-container style="padding: 0.5em" title="View All Alarms" buttonClass="btn-view" class="no-padding col-md-4"></button-container>
-          <button-container style="padding: 0.5em" title="Schedule Events" buttonClass="btn-view" class="no-padding col-md-4"></button-container>
+          <button-container style="padding: 0.5em" title="View All Tickets" buttonClass="btn-view"
+                            arrowClass="arrow-btn-view" class=" no-padding col-md-4"></button-container>
+          <button-container style="padding: 0.5em" title="View All Alarms" buttonClass="btn-view"
+                            arrowClass="arrow-btn-view" class="no-padding col-md-4"></button-container>
+          <button-container style="padding: 0.5em" title="Schedule Events" buttonClass="btn-view"
+                            arrowClass="arrow-btn-view" class="no-padding col-md-4"></button-container>
 
           <req-opened-report days="7" date="Mar. 20 11:00 GMT" criticalRequest='2343' expirationRequest="1229"
                              totalRequest="189" class=" no-padding col-md-4"></req-opened-report>
@@ -517,7 +558,8 @@
       </card-body>
       <card-footer style="text-align: right">
         <div class="text-right">
-          <button-container title="&nbsp;View All Requests&nbsp;&nbsp;" buttonClass="btn-view"></button-container>
+          <button-container title="&nbsp;View All Requests&nbsp;&nbsp;" buttonClass="btn-view"
+                            arrowClass="arrow-btn-view"></button-container>
         </div>
       </card-footer>
 
@@ -532,7 +574,8 @@
 
       <card-footer style="text-align: right">
         <div class="text-right">
-          <button-container title="&nbsp;View All Activity&nbsp;&nbsp;" buttonClass="btn-view"></button-container>
+          <button-container title="&nbsp;View All Activity&nbsp;&nbsp;" buttonClass="btn-view"
+                            arrowClass="arrow-btn-view"></button-container>
         </div>
       </card-footer>
     </card>
