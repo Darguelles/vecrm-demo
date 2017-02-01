@@ -39,35 +39,6 @@
     box-shadow: 1px 1px 1px #888888 !important
   }
 
-  .btn-create-case {
-    background-color: #910308;
-    color: white;
-  }
-
-  .btn-view {
-    background-color: rgb(126, 157, 176);
-    color: white;
-  }
-
-  .btn-create-bill {
-    background-color: darkorange;
-    color: white;
-  }
-
-  .btn-create-order {
-    background-color: brown;
-    color: white;
-  }
-
-  .btn-submit-project {
-    background-color: #5d8fc2;
-    color: white;
-  }
-
-  .btn-info {
-    background-color: #046694;
-  }
-
   .sprite-billinginquiries {
     background-position: 0 -1633px;
     width: 40px;
@@ -169,6 +140,12 @@
 
   .customer-info-label {
     font-size: x-small;
+  }
+
+  .btn-table-head{
+    color: #fff;
+    background-color: #3e78d0;
+    border-color: #3e78d0;
   }
 
 </style>
@@ -305,7 +282,7 @@
           <thead>
           <tr>
             <th colspan="2">
-              <button class="btn btn-info width-100 mb-xs" role="button">
+              <button class="btn btn-table-head width-100 mb-xs" role="button">
                 Current
               </button>
               <button class="btn btn-gray width-100 mb-xs" role="button">
@@ -329,7 +306,7 @@
 
       <card-footer style="text-align: right">
         <div class="text-right">
-          <button class="btn btn-create-case">Create New Case</button>
+          <button-container title="Create New Case" buttonClass="btn-create-case"></button-container>
         </div>
       </card-footer>
     </card>
@@ -401,9 +378,9 @@
 
       </card-body>
       <card-footer style="text-align: right">
-        <div class="text-right">
-          <button class="btn btn-view">&nbsp;&nbsp;View Billing Invoice&nbsp;&nbsp;</button>
-          <button class="btn btn-create-bill">&nbsp;&nbsp;Create Bill Inquiry&nbsp;&nbsp;</button>
+        <div class=" row text-right" style="margin-left: 33em;  ">
+          <button-container title="Create New Case" buttonClass="btn-view"></button-container>
+          <button-container style="margin-left: 3px;" title="&nbsp;&nbsp;Create Bill Inquiry&nbsp;&nbsp;" buttonClass="btn-create-bill"></button-container>
         </div>
       </card-footer>
     </card>
@@ -417,7 +394,7 @@
           <thead>
           <tr>
             <th colspan="2">
-              <button class="btn btn-info width-100 mb-xs" role="button">
+              <button class="btn btn-table-head width-100 mb-xs" role="button">
                 0 - 180 Days
               </button>
               <button class="btn btn-gray width-100 mb-xs" role="button">
@@ -462,9 +439,9 @@
       </card-body>
 
       <card-footer style="text-align: right">
-        <div class="text-right">
-          <button class="btn btn-view">&nbsp;&nbsp;View Latest Orders&nbsp;&nbsp;</button>
-          <button class="btn btn-create-order">&nbsp;&nbsp;Create Order&nbsp;&nbsp;</button>
+        <div class=" row text-right" style="margin-left: 33em;  ">
+          <button-container title="&nbsp;View Latest Orders&nbsp;&nbsp;" buttonClass="btn-view"></button-container>
+          <button-container style="margin-left: 3px;" title="&nbsp;&nbsp;Create Order&nbsp;&nbsp;" buttonClass="btn-create-order"></button-container>
         </div>
       </card-footer>
 
@@ -509,7 +486,7 @@
       </card-body>
       <card-footer style="text-align: right">
         <div class="text-right">
-          <button class="btn btn-submit-project">Submit a GOLD Lead</button>
+          <button-container title="&nbsp;Submit a GOLD Lead&nbsp;&nbsp;" buttonClass="btn-submit-project"></button-container>
         </div>
       </card-footer>
 
@@ -525,9 +502,9 @@
           <bar-chart class=" no-padding col-md-4"></bar-chart>
           <event-report class="no-padding col-md-4"></event-report>
 
-          <button-container title="View All Tickets" class=" no-padding col-md-4"></button-container>
-          <button-container title="View All Alarms" class="no-padding col-md-4"></button-container>
-          <button-container title="Schedule Events" class="no-padding col-md-4"></button-container>
+          <button-container style="padding: 0.5em" title="View All Tickets" buttonClass="btn-view" class=" no-padding col-md-4"></button-container>
+          <button-container style="padding: 0.5em" title="View All Alarms" buttonClass="btn-view" class="no-padding col-md-4"></button-container>
+          <button-container style="padding: 0.5em" title="Schedule Events" buttonClass="btn-view" class="no-padding col-md-4"></button-container>
 
           <req-opened-report days="7" date="Mar. 20 11:00 GMT" criticalRequest='2343' expirationRequest="1229"
                              totalRequest="189" class=" no-padding col-md-4"></req-opened-report>
@@ -541,7 +518,7 @@
       </card-body>
       <card-footer style="text-align: right">
         <div class="text-right">
-          <button class="btn btn-view">View All Requests</button>
+          <button-container title="&nbsp;View All Requests&nbsp;&nbsp;" buttonClass="btn-view"></button-container>
         </div>
       </card-footer>
 
@@ -556,7 +533,7 @@
 
       <card-footer style="text-align: right">
         <div class="text-right">
-          <button class="btn btn-view">View All Activity</button>
+          <button-container title="&nbsp;View All Activity&nbsp;&nbsp;" buttonClass="btn-view"></button-container>
         </div>
       </card-footer>
     </card>
