@@ -8,7 +8,6 @@
   }
 
   .dashboard-header-top {
-    position: fixed;
     z-index: 20;
     height: 8em;
     transition: all 0.4s ease;
@@ -18,7 +17,7 @@
 
 <nav navbar class="navbar-dashboard  {{headerClass}} box-shadow-lighter dashboard-header" ></nav>
 <div class="content-wrap" id="content-wrap">
-  <main id="content" class="content" role="main" style="padding: 0px 0px 0px;" >
+  <main id="content" class="content" role="main" style="padding-left: 0px; padding-right: 0px;">
     <router-outlet></router-outlet>
     <div footer></div>
   </main>
