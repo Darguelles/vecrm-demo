@@ -1,4 +1,22 @@
-<nav navbar class="navbar-dashboard  box-shadow-lighter" ></nav>
+<style>
+
+  .dashboard-header {
+    position: fixed;
+    z-index: 20;
+    height: 3.5em;
+    transition: all 0.4s ease;
+  }
+
+  .dashboard-header-top {
+    position: fixed;
+    z-index: 20;
+    height: 8em;
+    transition: all 0.4s ease;
+  }
+
+</style>
+
+<nav navbar class="navbar-dashboard  {{headerClass}} box-shadow-lighter dashboard-header" ></nav>
 <div class="content-wrap" id="content-wrap">
   <main id="content" class="content" role="main" style="padding: 0px 0px 0px;" >
     <router-outlet></router-outlet>

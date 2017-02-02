@@ -30,6 +30,47 @@
     height: 50px;
   }
 
+  .button-hide {
+    display: none;
+    transition: all 0.4s ease;
+  }
+
+  .button-hide-top {
+    transition: all 0.4s ease;
+  }
+
+  .checkbox-group-display {
+    display: none;
+  }
+
+  .checkbox-group-display-top {
+    display: flex;
+  }
+
+  .search-bar-top {
+    margin-top: 0em;
+    transition: all 0.4s ease;
+  }
+
+  .search-bar {
+    margin-top: -1.5em;
+    transition: all 0.4s ease;
+  }
+
+
+  .icon-logo {
+    margin-top: -2em;
+    width: 7em;
+    transition: all 0.4s ease;
+  }
+
+  .icon-logo-top {
+    margin-top: 0;
+    transition: all 0.4s ease;
+  }
+
+
+
 </style>
 
 <div class="container-fluid">
@@ -80,10 +121,10 @@
       </div>
 
       <div class="col-lg-3">
-        <img class="logo-icon-background" src="../../../assets/img/header/vecrm-by-verizon.png">
+        <img class="logo-icon-background {{iconLogoClass}}" src="../../../assets/img/header/vecrm-by-verizon.png">
       </div>
       <div class=" col-lg-5">
-        <div class="input-group" style="border-radius: 2px">
+        <div class="input-group {{searchBarClass}}" style="border-radius: 2px">
           <div class="input-group-btn" data-dropdown>
             <button class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
               Customers
@@ -106,7 +147,7 @@
 
         </div>
         <!--<br/>-->
-        <div class="row checkbox-group">
+        <div class="row checkbox-group {{checkboxClass}}">
           <div>
             <label class="checkbox-title">
               Refine:
@@ -146,7 +187,7 @@
 
       </div>
 
-      <div class="col-lg-4" style="text-align: right">
+      <div class="col-lg-4  {{headerClass}} " style="text-align: right">
         <img class="image-menu-dropdown" src="../../../assets/img/header/customer-management.png">
         <b class="caret"></b>
         &nbsp;
@@ -165,7 +206,7 @@
         <img class="image-menu-dropdown" src="../../../assets/img/header/engineering.png">
         <b class="caret"></b>
         &nbsp;
-        <img class="image-menu-dropdown" src="../../../assets/img/header/service-assurance.png"  >
+        <img class="image-menu-dropdown" src="../../../assets/img/header/service-assurance.png">
         <b class="caret"></b>
         &nbsp;
         <!--<img class="image-menu-dropdown">-->
