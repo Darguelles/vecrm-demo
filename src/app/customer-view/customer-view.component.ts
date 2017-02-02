@@ -1,5 +1,6 @@
-import {Component, AfterViewChecked, ElementRef, AfterViewInit, OnInit} from '@angular/core';
+import {Component, AfterViewChecked, ElementRef, AfterViewInit, HostListener, Inject} from '@angular/core';
 import {Column} from '../grid/column.ts';
+import {DOCUMENT} from '@angular/platform-browser';
 
 let Packery = require('packery');
 let Draggabilly = require('draggabilly');
@@ -68,8 +69,11 @@ export class CustomerViewComponent implements AfterViewInit {
   changeRequestData: number[];
   changeRequestColours: string[];
 
+  infoPageClass:string = 'info-page-top'
+  infoPageContentClass:string = 'info-page-content-top'
 
-  constructor(public element: ElementRef) {
+
+  constructor(public element: ElementRef, @Inject(DOCUMENT) private document: Document) {
 
     // this.pckry = this.pckry;
     this.cases = this.getCases();
@@ -137,6 +141,21 @@ export class CustomerViewComponent implements AfterViewInit {
 
     });
   }
+
+
+  @HostListener("window:scroll", [])
+  onWindowScroll() {
+    let number = this.document.body.scrollTop;
+    if (number == 0) {
+      this.infoPageClass   = 'info-page-top'
+      this.infoPageContentClass   = 'info-page-content-top'
+
+    } else {
+      this.infoPageClass = 'info-page'
+      this.infoPageContentClass = 'info-page-content'
+    }
+  }
+
 
 
   getServiceRequestData(): Array<number> {

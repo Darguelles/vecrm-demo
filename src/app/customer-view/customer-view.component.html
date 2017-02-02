@@ -170,13 +170,36 @@
     border-top-color: orange;
   }
 
+  .info-page-top{
+    transition: all 0.4s ease;
+  }
+
+  .info-page{
+    z-index: 20;
+    width: 100%;
+    position: fixed;
+    margin-top: -3em !important;
+    height: 2em !important;
+    transition: all 0.4s ease;
+  }
+
+  .info-page-content {
+    margin-top: -1em;
+    transition: all 0.4s ease;
+  }
+
+  .info-page-content-top {
+    margin-top: 0;
+    transition: all 0.4s ease;
+  }
+
 </style>
 
 
-<ol class="breadcrumb"
+<ol class="breadcrumb {{infoPageClass}}"
     style="height: 50px; vertical-align: middle; background-color: lightgrey; padding-top: 15px; padding-left: 40px;     margin-top: 1.6em;">
-  <li class="breadcrumb-item"  ><a>Dashboard</a></li>
-  <li class="active breadcrumb-item"  >Goverment of the United States</li>
+  <li class="breadcrumb-item {{infoPageContentClass}}"  ><a>Dashboard</a></li>
+  <li class="active breadcrumb-item {{infoPageContentClass}}"  >Goverment of the United States</li>
 </ol>
 
 <div class="container-fluid" style="padding: 40px 90px 50px;">
