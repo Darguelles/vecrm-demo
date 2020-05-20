@@ -3,7 +3,7 @@
 ### Docker Quick Start
 
 - Clone the project from the repository inside the C:/Users/* folder (Only if you're using Windows)
-- Download Docker from [https://docs.docker.com/docker-for-windows/](Docker getting started Windows guide)
+- Download Docker from [Docker getting started Windows guide](https://docs.docker.com/docker-for-windows/)
 
 Execute Docker Quickstart Terminal - cd into your project root folder and put the following command:
 
@@ -12,7 +12,7 @@ $ docker-compose up
 ```
 This command will download the image specified in the Dockerfile of the project. Maybe can take a few minutes to download all the dependencies, once finished the project will be deployed inside the container and you can access from your host browser:
 
-[http://192.168.99.100:3000](Project url inside container)
+Project [url](http://192.168.99.100:3000)
 
 By default, the port 3000 is configured to be exposed, it can be changed in the dockerfile.
 
